@@ -1,0 +1,562 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>IDK_CURTIN_CTF_2024_WAVE_2--WriteUp | Salad の Blog</title><meta name="author" content="salad07"><meta name="copyright" content="salad07"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="CURTIN CTF 2024 PART 2 WAVE 2 HEHEH CONTINUE WITH THE STAY UP NIGHT 🦉….. I RMB I SOLVED THESE CHAL IN STARBUCK, MOST OF THEM ARE CRYPTO AND RE   CRYPTORSA 1 228 pts |P-Q|Yayayay finally got RSA   1.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDK_CURTIN_CTF_2024_WAVE_2--WriteUp">
+<meta property="og:url" content="http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/index.html">
+<meta property="og:site_name" content="Salad の Blog">
+<meta property="og:description" content="CURTIN CTF 2024 PART 2 WAVE 2 HEHEH CONTINUE WITH THE STAY UP NIGHT 🦉….. I RMB I SOLVED THESE CHAL IN STARBUCK, MOST OF THEM ARE CRYPTO AND RE   CRYPTORSA 1 228 pts |P-Q|Yayayay finally got RSA   1.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2024-10-19T03:13:38.000Z">
+<meta property="article:modified_time" content="2024-10-19T03:13:38.719Z">
+<meta property="article:author" content="salad07">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'IDK_CURTIN_CTF_2024_WAVE_2--WriteUp',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-19 11:13:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/post.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="Salad の Blog"><span class="site-name">Salad の Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">IDK_CURTIN_CTF_2024_WAVE_2--WriteUp</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-10-19T03:13:38.000Z" title="Created 2024-10-19 11:13:38">2024-10-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-10-19T03:13:38.719Z" title="Updated 2024-10-19 11:13:38">2024-10-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ctf/">ctf</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>11min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="IDK_CURTIN_CTF_2024_WAVE_2--WriteUp"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>CURTIN CTF 2024 PART 2 WAVE 2</p>
+<p>HEHEH CONTINUE WITH THE STAY UP NIGHT 🦉….. I RMB I SOLVED THESE CHAL IN STARBUCK, MOST OF THEM ARE CRYPTO AND RE </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307618.626106.png"></p>
+<h1 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO"></a>CRYPTO</h1><h2 id="RSA-1-228-pts-P-Q"><a href="#RSA-1-228-pts-P-Q" class="headerlink" title="RSA 1 228 pts |P-Q|"></a>RSA 1 228 pts |P-Q|</h2><p>Yayayay finally got RSA </p>
+<p> 1. import random</p>
+<p> 2. from Crypto.Util.number import bytes_to_long</p>
+<p> 3.  </p>
+<p> 4. def gen_primes(bits, c_f):</p>
+<p> 5.     </p>
+<p> 6.     p = random.getrandbits(bits)</p>
+<p> 7.     if p % 2 == 0:</p>
+<p> 8.         p += 1</p>
+<p> 9.     while not is_prime(p):</p>
+<p>10.         p += 2</p>
+<p>11.     </p>
+<p>12.     </p>
+<p>13.     lower_bound = p + (p &#x2F;&#x2F; c_f)</p>
+<p>14.     upper_bound = p + (p &#x2F;&#x2F; (c_f &#x2F;&#x2F; 2))</p>
+<p>15.     q = random.randint(lower_bound, upper_bound)</p>
+<p>16.     if q % 2 == 0:</p>
+<p>17.         q += 1</p>
+<p>18.     while not is_prime(q):</p>
+<p>19.         q += 2</p>
+<p>20.         if q &gt; upper_bound:</p>
+<p>21.             q = lower_bound</p>
+<p>22.             if q % 2 == 0:</p>
+<p>23.                 q += 1</p>
+<p>24.     </p>
+<p>25.     return p, q</p>
+<p>26.  </p>
+<p>27. def is_prime(n, k=5):</p>
+<p>28.     if n &lt; 2: return False</p>
+<p>29.     for p in [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]:</p>
+<p>30.         if n % p == 0: return n == p</p>
+<p>31.     s, d = 0, n - 1</p>
+<p>32.     while d % 2 == 0:</p>
+<p>33.         s, d = s + 1, d &#x2F;&#x2F; 2</p>
+<p>34.     for _ in range(k):</p>
+<p>35.         a = random.randrange(2, n - 1)</p>
+<p>36.         x = pow(a, d, n)</p>
+<p>37.         if x == 1 or x == n - 1: continue</p>
+<p>38.         for _ in range(s - 1):</p>
+<p>39.             x = pow(x, 2, n)</p>
+<p>40.             if x == n - 1: break</p>
+<p>41.         else:</p>
+<p>42.             return False</p>
+<p>43.     return True</p>
+<p>44.  </p>
+<p>45. p, q = gen_primes(4096, 9998)</p>
+<p>46. n = p * q</p>
+<p>47. phi = (p - 1) * (q - 1)</p>
+<p>48. e = 65537</p>
+<p>49. d = pow(e, -1, phi)</p>
+<p>50. m = b’REDACTED’</p>
+<p>51. c = pow(bytes_to_long(m), e, n)</p>
+<p>52.  </p>
+<p>53. print(f”n = {n}”)</p>
+<p>54. print(f”|p - q| = {abs(p - q)}”)</p>
+<p>55. print(f”c = {c}”)</p>
+<p>56. print(f”e = {e}”)</p>
+<p>57.  </p>
+<h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA:"></a>IDEA:</h3><p>It gives |p-q|, so this should be the “vulnerability” part?</p>
+<p>Ok go back to middle school math (@hoon told me is this middle school level)!!!</p>
+<p>n = pq</p>
+<p>phi = (p-1)(q-1) </p>
+<p>= pq -p -q + 1 </p>
+<p>= n – (p+q) + 1</p>
+<p>n provided &#x2F;</p>
+<p>So how to get p+q????</p>
+<p>(p-q)(p-q) -----------1</p>
+<p>= p^2 -2pq + q^2 </p>
+<p>= p^2 -2n +p^2</p>
+<p>= p^2 + q^2 - 2n</p>
+<p>(p+q)(p+q) -----------2</p>
+<p>= p^2 +2n +q^2</p>
+<p>= p^2 + q^2 + 2n</p>
+<p>1 -&gt; 2 only need to + 4n</p>
+<p>(p+q) = &#x2F;(p-q)(p-q)+4n</p>
+<p>P +q script is below </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307618.6371086.png" alt="A computer screen shot of a number Description automatically generated"></p>
+<p>Then continue to get phi and d -&gt; solve</p>
+<p>phi = (p - 1) * (q - 1)</p>
+<p>= pq -p -q +1</p>
+<p>= n –(p+q) + 1</p>
+<p>= n – (above) + 1</p>
+<p>Then d -&gt; m settle </p>
+<h3 id="Ok-full-solution"><a href="#Ok-full-solution" class="headerlink" title="Ok full solution"></a>Ok full solution</h3><p> 1. import math</p>
+<p> 2. import gmpy2</p>
+<p> 3. import libnum</p>
+<p> 4. from Crypto.Util.number import long_to_bytes</p>
+<p> 5.  </p>
+<p> 6. n=15940880393081622192223979546417668454241001094105696491631845740319699779637868921818468662546538526734159459987929569646758157949726050092327261607567477210838728560641007932591472048341979229227000996158864820326472140369536128940011407532021392192858059263128347413516277627338557773943130473619144266602819768289316894685127758747023625922861716983808957650638526747245869728390450745710053889903365620164261097827034696518433301946463145635387673172039280459108906156350531065067336803176395966402871830286192577088734549689317831281599635132619523883607065807674352024907150268276243231669001306391571889664767000269740644816918518242783451143038482044617197372383969811690923359599584060183246684500682839727818817572623643916667956119711025923398568092705131007640437009630310461215618002687681148614450537994685732723364660314199425405823518030479379304998927941434491041698761309565206754369009655472934744341914827525943272586954251730078614382895749955996740380235107223902027659741996429282861891673085104147370045405961294099732979678272773826599016536412578932433904030505154999176517839833260039964597955076704762201524866516857761405360622930516491985930417948661249000621996356980915282995033583482641405828363443819241154399820186471985527636315446103596671058367866892705878909337399021378085620148416281726544652130913248870503306604860069279648074721897994731666127511897571565176702890871406233528233764474842435353662824803774230985170155102399526678113553185926581547531929458018714491649785151228464354683945162919888238078818142664891976580283043168793532818976641325908588559452360271093536728188468093955635851427400246135873082132120043700880049057114037825152222836929555281795129395718413678801035220085447886467326801984191156595256589818613913229363820848876188943510988155897845879797538033623007410622942705920928531297122355664722115432967894109638655871697467544954570368089729236699347314122966944234115811880321161988925755790917881868951745905665036446036114588885458572324261723207406410695928509493222079503841942661183609924325963288751971513447161960665796967979143891190229029219582316717531133448823477925219559046895187452616687163842512991459142565797945381440167111698245672180570103015392203883682050472726311220309044957019444576289519199490560422919525648997774693485847722051397914538064633576600336792092599951404116951597102344146970626745993023933325515868962556368207329326367871452331540970273987458930797</p>
+<p> 7. # assume p - q is x</p>
+<p> 8. x=19446185665001932891863123565802286467991322014746876964013701369322897657444386633296616696168267366199920908214861667183967127865711481276497998516475134987986234107252897362882360257060819274323493441003279977951185789618655911147638408200310708832863210179986939189277431934841758094681397206297269204946733155416228404475101349159647712893882998644638490972589384447685758296695943696378904740865372847834754012806961145339009705107364366305272446432151468385174168203082509791808125524328759572433089974565599380134406580709133277810467919601298087724371283440367928548920207922728843966255605792638884428157104036042309966679145466135156678157063068138401063208639819013053445933650327463224033606491166029807779049310851321687425814592777852113728121194401684278386654197915094379386331968569071047319013960290729128040322044194139995761548185543015779153245806933487262288281397595328529970986231707560121231845029590674493616017456787804838794787286983295028461473824879025799162116310309820208035189596601045522614202811245581151461360787349910512422879586756376900659196002122475214220004775212001355945966793757926005189263687454876821065812893701132511947238001771844876788216681670235849206704991988163485611260844</p>
+<p> 9. c =8413782726461541602913756039758305440836412287813773153411365960748450871027707633874217383295383481869325038078976781015007513229347097469371279220803204983355347655683513667088588074202501147594395702282334179124794781871517260250525536908326800965888418964918694916006884537543011229484376018147268919406195055917084790592479499766734576144082810933280877054789971671533919533660158408423424185650356318518379636823750893726233499500188843692055868151249687738386488534142892831049124956774899410006084346138710056812199825326206688966306714260750975121581835353985336980114774232067155041193198180698246403870169981563849307541955386369149422881602494929264929737280150329566903466285149020311618967791172538171280546694675534389454765543724780546918668435019028064871754691532110565068615157319889820944033048902255664642773218099048574566017181575258546758883546492803137717155881557338843592209207689463957840581945426930837246385901477752907096376004160861031244782814843210961453696657150665127977305005202771961236999129828758134510593378918560947499235704939556050322382009751568420207568808891407979608313803205850457374203809188547053115181776254415319188681883447021017869446867989346915152852825019616081716802990396062469163243135351547702156800537851107924720649180003285840914409777322049074094783843649569729539066223970441125382806118498958261540756052860910490399082824953032938402516792174368475134992760224198700374390864316120110306938158921418121457620889268565760685238892212999604146465162867640041064499228386006681717471251254990717858562759770905947269460142594521881470262940835078829442425244723815621278919162516682158822798977763435125635963668626156334114464102838126493966355609183208192998531373143867887346353211910003642658203653385244836610494653921249974400825401880566797287387115572727756785284767721336001760816036988439334050351608229131590077522439493925221375259909629016262905916790128638258322194247479997220390050492289058204485034457313809723675617094812771640112394720404929279053643210561537233165368292934623525915746720648655418268587097359836671508455239599508020030055462133024501888962745878358260116256538476487838862369689123290204371877250090186672449934183327283618423893439031497798985471835874040738044268676828950640266922716836786100999406935131991385114491269400938094956780725144002766875279228699473643314965832833403460993564655225664279717054432748451778401574414898003066402168353796733750757</p>
+<p>10. e = 65537</p>
+<p>11. y=x*x</p>
+<p>12. z=y+4*n</p>
+<p>13. q=gmpy2.isqrt(z)</p>
+<p>14. print(q)</p>
+<p>15.  </p>
+<p>16. phi = n-q+1</p>
+<p>17. d = libnum.invmod(e,phi)</p>
+<p>18. m = pow(c,d,n)</p>
+<p>19. print(long_to_bytes(m))</p>
+<p>20.  </p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>CURTIN_CTF{1s_7h15_50m37h1ng_c10s3_70_m4g1c?}</p>
+<h2 id="RSA-2-219-pts-factor-n"><a href="#RSA-2-219-pts-factor-n" class="headerlink" title="RSA 2 219 pts factor n"></a>RSA 2 219 pts factor n</h2><h3 id="CHAL"><a href="#CHAL" class="headerlink" title="CHAL"></a>CHAL</h3><p> 1. from Crypto.Util.number import bytes_to_long</p>
+<p> 2.  </p>
+<p> 3. import random</p>
+<p> 4. from math import gcd</p>
+<p> 5.  </p>
+<p> 6. def generate_close_primes(bits):</p>
+<p> 7.     p = random.getrandbits(bits)</p>
+<p> 8.     if p % 2 == 0:</p>
+<p> 9.         p += 1</p>
+<p>10.     while not is_prime(p):</p>
+<p>11.         p += 2</p>
+<p>12.     q = p + 2</p>
+<p>13.     while not is_prime(q):</p>
+<p>14.         q += 2</p>
+<p>15.     return p, q</p>
+<p>16.  </p>
+<p>17. def is_prime(n, k=5):</p>
+<p>18.     if n &lt; 2: return False</p>
+<p>19.     for p in [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]:</p>
+<p>20.         if n % p == 0: return n == p</p>
+<p>21.     s, d = 0, n - 1</p>
+<p>22.     while d % 2 == 0:</p>
+<p>23.         s, d = s + 1, d &#x2F;&#x2F; 2</p>
+<p>24.     for _ in range(k):</p>
+<p>25.         a = random.randrange(2, n - 1)</p>
+<p>26.         x = pow(a, d, n)</p>
+<p>27.         if x == 1 or x == n - 1: continue</p>
+<p>28.         for _ in range(s - 1):</p>
+<p>29.             x = pow(x, 2, n)</p>
+<p>30.             if x == n - 1: break</p>
+<p>31.         else:</p>
+<p>32.             return False</p>
+<p>33.     return True</p>
+<p>34.  </p>
+<p>35. def generate_keys(bits):</p>
+<p>36.     p, q = generate_close_primes(bits &#x2F;&#x2F; 2)</p>
+<p>37.     n = p * q</p>
+<p>38.     phi = (p - 1) * (q - 1)</p>
+<p>39.     e = 65537</p>
+<p>40.     d = pow(e, -1, phi)</p>
+<p>41.     print(“p:”, p)</p>
+<p>42.     print(“q:”, q)</p>
+<p>43.     return (n, e), (n, d)</p>
+<p>44.  </p>
+<p>45. def encrypt(message, public_key):</p>
+<p>46.     n, e = public_key</p>
+<p>47.     return pow(message, e, n)</p>
+<p>48.  </p>
+<p>49. # Example usage</p>
+<p>50. bits = 1024</p>
+<p>51. public_key, private_key = generate_keys(bits)</p>
+<p>52. message = bytes_to_long(b’REDACTED’)</p>
+<p>53. encrypted = encrypt(message, public_key)</p>
+<p>54. print(f”Encrypted message: {encrypted}”)</p>
+<p>55. print(public_key)</p>
+<p>56.  </p>
+<p>n = 38851370026688292718610500714047313275568128923880406032240694321386868708669715834849444005885071039350867771015411960409482332075714895130040955721609469707712307896329759118786126795971608203356413095211390559788430050833157008379312765193252778797982267208761085870346676464332871683194405356959302337269</p>
+<p>c = 10261077771725074705657914043269356567599143194523440913396849942218293691678585398731563393613698000832185314817454466653490727661933561044428403796426278758420015350118130960938311896749919783987826137481434137155805830348623564782373093651077789955010753791725635501759033479236281331100713235218526738970</p>
+<p>e = 65537</p>
+<h3 id="IDEA-1"><a href="#IDEA-1" class="headerlink" title="IDEA:"></a>IDEA:</h3><p>Ermmm my first idea just factor n ….</p>
+<p>OK success … wtf </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307618.6501114.png" alt="A number on a white background Description automatically generated"></p>
+<p>Follow normal flow ~</p>
+<p>Find q -&gt; phi -&gt; d -&gt; m</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p> 1. import math</p>
+<p> 2. import gmpy2</p>
+<p> 3. import libnum</p>
+<p> 4. from Crypto.Util.number import long_to_bytes</p>
+<p> 5.  </p>
+<p> 6. n=38851370026688292718610500714047313275568128923880406032240694321386868708669715834849444005885071039350867771015411960409482332075714895130040955721609469707712307896329759118786126795971608203356413095211390559788430050833157008379312765193252778797982267208761085870346676464332871683194405356959302337269</p>
+<p> 7. e = 65537</p>
+<p> 8. p=6233086717404811841914779194519336982781750068258871294815688852715077739601009055618092780662582923895679987659707890437748632106044135239876997598321787</p>
+<p> 9. q =n &#x2F;&#x2F;p</p>
+<p>10. c= 10261077771725074705657914043269356567599143194523440913396849942218293691678585398731563393613698000832185314817454466653490727661933561044428403796426278758420015350118130960938311896749919783987826137481434137155805830348623564782373093651077789955010753791725635501759033479236281331100713235218526738970</p>
+<p>11. phi = (p - 1) * (q - 1)</p>
+<p>12. d = libnum.invmod(e,phi)</p>
+<p>13. m = pow(c,d,n)</p>
+<p>14. print(long_to_bytes(m))</p>
+<p>15.  </p>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p>CURTIN_CTF{4_m4gn1fy1ng_gl455_w0n7_b3_n33d3d_for_sur3}</p>
+<h2 id="AMALGAM-333-PTS-Elgamal"><a href="#AMALGAM-333-PTS-Elgamal" class="headerlink" title="AMALGAM 333 PTS Elgamal"></a>AMALGAM 333 PTS Elgamal</h2><h3 id="Chal"><a href="#Chal" class="headerlink" title="Chal"></a>Chal</h3><p> 1. from Crypto.Util.number import isPrime, bytes_to_long</p>
+<p> 2. import random</p>
+<p> 3.  </p>
+<p> 4. class Amalgam:</p>
+<p> 5.     def __init__(self, bits=128):</p>
+<p> 6.         self.p = self._generate_prime(bits)</p>
+<p> 7.         self.g = 2  </p>
+<p> 8.         self.x = random.randint(2, self.p-2) </p>
+<p> 9.         self.h = pow(self.g, self.x, self.p)</p>
+<p>10.         </p>
+<p>11.     def _generate_prime(self, bits):</p>
+<p>12.         while True:</p>
+<p>13.             s_f = 1</p>
+<p>14.             for prime in [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]:</p>
+<p>15.                 s_f *= prime</p>
+<p>16.             k = random.getrandbits(bits - s_f.bit_length())</p>
+<p>17.             p = k * s_f + 1</p>
+<p>18.             </p>
+<p>19.             if isPrime(p) and p.bit_length() == bits:</p>
+<p>20.                 return p</p>
+<p>21.     </p>
+<p>22.     def encrypt(self, m):</p>
+<p>23.         y = random.randint(2, self.p-2)</p>
+<p>24.         c1 = pow(self.g, y, self.p)</p>
+<p>25.         s = pow(self.h, y, self.p)</p>
+<p>26.         c2 = (m * s) % self.p</p>
+<p>27.         return (c1, c2)</p>
+<p>28.     </p>
+<p>29.     def get_public_params(self):</p>
+<p>30.         return (self.p, self.g, self.h)</p>
+<p>31.  </p>
+<p>32. def run_server():</p>
+<p>33.     prob = Amalgam()</p>
+<p>34.     flag = b”REDACTED”</p>
+<p>35.     flag_ = bytes_to_long(flag)</p>
+<p>36.     flag_enc = prob.encrypt(flag_)</p>
+<p>37.     print(f”p = {prob.p}”)</p>
+<p>38.     print(f”g = {prob.g}”)</p>
+<p>39.     print(f”h = {prob.h}”)</p>
+<p>40.     print(f”Encrypted flag: {flag_enc}”)</p>
+<p>41.  </p>
+<p>p = 186506814954895414068796533711441426871</p>
+<p>g = 2</p>
+<p>h = 128780011407215156870232600336696679553</p>
+<p>Encrypted flag: (156581689710555992734938659724336258165, 113787733820173627914147318932861607685)</p>
+<h3 id="IDEA-2"><a href="#IDEA-2" class="headerlink" title="IDEA:"></a>IDEA:</h3><p>OK is an elgamal encryption (yaaa same pronunciation</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307618.6601133.png" alt="A screen shot of a computer program Description automatically generated"> </p>
+<p>So study what is elgamal </p>
+<ol>
+<li>Choose a random y</li>
+<li>c1 = g^y %p</li>
+<li>s = h^y %p</li>
+<li>c2 = m * s % p</li>
+</ol>
+<p>What do we have?</p>
+<ol>
+<li>P is a prime</li>
+<li>G = 2</li>
+<li>H = g^x %p (x is a unknown key)</li>
+<li>Encrypted (c1,c2)</li>
+</ol>
+<p>Solution way</p>
+<p>Random x is small and g is small</p>
+<p>My idea is can brute &#x2F; baby-step giant step &#x2F; pollard rho -&gt; find x</p>
+<p>After get x then count s -&gt; solve and get m</p>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p> 1. from Crypto.Util.number import long_to_bytes, inverse, GCD</p>
+<p> 2. from sympy.ntheory import discrete_log</p>
+<p> 3.  </p>
+<p> 4. # Given parameters</p>
+<p> 5. p = 186506814954895414068796533711441426871</p>
+<p> 6. g = 2</p>
+<p> 7. h = 128780011407215156870232600336696679553</p>
+<p> 8. c1 = 156581689710555992734938659724336258165</p>
+<p> 9. c2 = 113787733820173627914147318932861607685</p>
+<p>10.  </p>
+<p>11. # Step 1: Solve the discrete log problem to find x, such that h = g^x % p</p>
+<p>12. x = discrete_log(p, h, g)  # This computes x</p>
+<p>13. # x = 63277427936816332851542320439881245850</p>
+<p>14. # Step 2: Compute the shared secret s = c1^x % p</p>
+<p>15. s = pow(c1, x, p)</p>
+<p>16. # Step 3: Compute the inverse of s mod p</p>
+<p>17. s_inv = inverse(s, p)</p>
+<p>18.  </p>
+<p>19. # Step 4: Decrypt the message, m = (c2 * s_inv) % p</p>
+<p>20. m = (c2 * s_inv) % p</p>
+<p>21. # Step 5: Convert m back to bytes (the original flag)</p>
+<p>22. flag = long_to_bytes(m)</p>
+<p>23. print(f”Recovered flag: {flag.decode()}”)</p>
+<p>24.  </p>
+<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><p>Recovered flag: dlP_50lv3d:)</p>
+<h1 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h1><h2 id="Wrot-200-pts"><a href="#Wrot-200-pts" class="headerlink" title="Wrot 200 pts"></a>Wrot 200 pts</h2><h3 id="CHAL-1"><a href="#CHAL-1" class="headerlink" title="CHAL"></a>CHAL</h3><p> 1. def enc_shift(n: int, bits: int, shift: int, direction: str = ‘left’) -&gt; int:</p>
+<p> 2. bit_len = bits</p>
+<p> 3. </p>
+<p> 4. if direction == ‘left’:</p>
+<p> 5. return ((n &lt;&lt; shift) | (n &gt;&gt; (bit_len - shift))) &amp; ((1 &lt;&lt; bit_len) - 1)</p>
+<p> 6. elif direction == ‘right’:</p>
+<p> 7. return ((n &gt;&gt; shift) | (n &lt;&lt; (bit_len - shift))) &amp; ((1 &lt;&lt; bit_len) - 1)</p>
+<p> 8. else:</p>
+<p> 9. raise ValueError(“Something’s not right\n”)</p>
+<p>10.  </p>
+<p>11.  </p>
+<p>12.  </p>
+<p>13. flag = ‘LOST_FLAG’</p>
+<p>14. shifted = []</p>
+<p>15. bits = 8</p>
+<p>16.  </p>
+<p>17. for i in range(len(flag)):</p>
+<p>18. if (i%2 == 0):</p>
+<p>19. shifted.append(enc_shift(ord(flag[i]), bits, 2, ‘left’))</p>
+<p>20. else:</p>
+<p>21. shifted.append(enc_shift(ord(flag[i]), bits, 2, ‘right’))</p>
+<p>22.  </p>
+<p>23. print(shifted)</p>
+<p>24.  </p>
+<p>IDEA: </p>
+<p>For each element in the shifted list, if the original character was shifted to the left, you shift it back to the right by the same amount.</p>
+<p>If it was shifted to the right, shift it back to the left by the same amount.</p>
+<p>YAYAYAAYY JUST LIKE THIS ?????</p>
+<p>OK SCRIPT</p>
+<h3 id="SOLUTION"><a href="#SOLUTION" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><p> 1. def dec_shift(n: int, bits: int, shift: int, direction: str = ‘left’) -&gt; int:</p>
+<p> 2.     bit_len = bits</p>
+<p> 3.     </p>
+<p> 4.     if direction == ‘left’:</p>
+<p> 5.         # Reverse left shift by shifting right</p>
+<p> 6.         return ((n &gt;&gt; shift) | (n &lt;&lt; (bit_len - shift))) &amp; ((1 &lt;&lt; bit_len) - 1)</p>
+<p> 7.     elif direction == ‘right’:</p>
+<p> 8.         # Reverse right shift by shifting left</p>
+<p> 9.         return ((n &lt;&lt; shift) | (n &gt;&gt; (bit_len - shift))) &amp; ((1 &lt;&lt; bit_len) - 1)</p>
+<p>10.     else:</p>
+<p>11.         raise ValueError(“Something’s not right\n”)</p>
+<p>12.  </p>
+<p>13. # Provided shifted list</p>
+<p>14. shifted = [153, 27, 133, 217, 237, 146, 49, 14, 49, 210, 9, 153, 153, 205, 145, 157, 212, 221, 193, 157, 9, 82, 228, 21, 13, 215, 185, 219, 125, 152, 165, 29, 205, 215, 177, 12, 212, 205, 245]</p>
+<p>15.  </p>
+<p>16. # Bits and shift value used during encoding</p>
+<p>17. bits = 8</p>
+<p>18. shift = 2</p>
+<p>19.  </p>
+<p>20. # Recovered flag</p>
+<p>21. recovered_flag = []</p>
+<p>22.  </p>
+<p>23. for i in range(len(shifted)):</p>
+<p>24.     if i % 2 == 0:</p>
+<p>25.         # Reverse left shift with a right shift</p>
+<p>26.         recovered_flag.append(chr(dec_shift(shifted[i], bits, shift, ‘left’)))</p>
+<p>27.     else:</p>
+<p>28.         # Reverse right shift with a left shift</p>
+<p>29.         recovered_flag.append(chr(dec_shift(shifted[i], bits, shift, ‘right’)))</p>
+<p>30.  </p>
+<p>31. # Join the list into a string</p>
+<p>32. recovered_flag_str = ‘’.join(recovered_flag)</p>
+<p>33. print(“Recovered flag:”, recovered_flag_str)</p>
+<p>34.  </p>
+<h3 id="OUTPUT"><a href="#OUTPUT" class="headerlink" title="OUTPUT"></a>OUTPUT</h3><p>flag{JL8LKBff7dv5wpvBI9TC_no_bits_l057}</p>
+<h2 id="PINVALIDATOR-250-PTS"><a href="#PINVALIDATOR-250-PTS" class="headerlink" title="PINVALIDATOR 250 PTS"></a>PINVALIDATOR 250 PTS</h2><p>Apk -&gt; jdgui decompile </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307618.676117.png" alt="A screen shot of a computer code Description automatically generated"></p>
+<h3 id="IDEA-3"><a href="#IDEA-3" class="headerlink" title="IDEA:"></a>IDEA:</h3><p>Ok hardcoded pin useless </p>
+<p>HARDCODED_STRING = “^\“u}B~%F’\“x%bU&amp;r%dZ’p%P&amp;d%`%d”</p>
+<p>Xor with 22 </p>
+<p>Then ?????? arrr ok Script </p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p> 1. HARDCODED_STRING = “^\“u}B~%F’\“x%bU&amp;r%dZ’p%P&amp;d%`%d”</p>
+<p> 2. KEY = 22</p>
+<p> 3.  </p>
+<p> 4. # Function to perform XOR operation on a string with a key</p>
+<p> 5. def xor_string(input_string, key):</p>
+<p> 6.     xor_result = ‘’.join(chr(ord(char) ^ key) for char in input_string)</p>
+<p> 7.     return xor_result</p>
+<p> 8.  </p>
+<p> 9. # XOR the HARDCODED_STRING using the KEY</p>
+<p>10. xor_result = xor_string(HARDCODED_STRING, KEY)</p>
+<p>11.  </p>
+<p>12. # Print the XOR result</p>
+<p>13. print(f”XOR Result: {xor_result}”)</p>
+<p>14.  </p>
+<p>Output </p>
+<p>XOR Result: H4ckTh3P14n3tC0d3rL1f3F0r3v3r</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">salad07</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/">http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="whatsapp,linkedin,wechat"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_3--WriteUp"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">IDK_CURTIN_CTF_2024_WAVE_3--WriteUp</div></div></a></div><div class="next-post pull-right"><a href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_1--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_1--WriteUp"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">IDK_CURTIN_CTF_2024_WAVE_1--WriteUp</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">salad07</div><div class="author-info__description">为了ta 拼尽全力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/saladbkp"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">SUP, a student who 24/7 fixing bugs, 努力从小白进化成小小白, 頑張れ~ 🔥</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CRYPTO"><span class="toc-number">1.</span> <span class="toc-text">CRYPTO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA-1-228-pts-P-Q"><span class="toc-number">1.1.</span> <span class="toc-text">RSA 1 228 pts |P-Q|</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA"><span class="toc-number">1.1.1.</span> <span class="toc-text">IDEA:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ok-full-solution"><span class="toc-number">1.1.2.</span> <span class="toc-text">Ok full solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.1.3.</span> <span class="toc-text">Output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA-2-219-pts-factor-n"><span class="toc-number">1.2.</span> <span class="toc-text">RSA 2 219 pts factor n</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CHAL"><span class="toc-number">1.2.1.</span> <span class="toc-text">CHAL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">IDEA:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.3.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-1"><span class="toc-number">1.2.4.</span> <span class="toc-text">Output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AMALGAM-333-PTS-Elgamal"><span class="toc-number">1.3.</span> <span class="toc-text">AMALGAM 333 PTS Elgamal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Chal"><span class="toc-number">1.3.1.</span> <span class="toc-text">Chal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-2"><span class="toc-number">1.3.2.</span> <span class="toc-text">IDEA:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-1"><span class="toc-number">1.3.3.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-2"><span class="toc-number">1.3.4.</span> <span class="toc-text">Output</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RE"><span class="toc-number">2.</span> <span class="toc-text">RE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wrot-200-pts"><span class="toc-number">2.1.</span> <span class="toc-text">Wrot 200 pts</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CHAL-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">CHAL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SOLUTION"><span class="toc-number">2.1.2.</span> <span class="toc-text">SOLUTION</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OUTPUT"><span class="toc-number">2.1.3.</span> <span class="toc-text">OUTPUT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PINVALIDATOR-250-PTS"><span class="toc-number">2.2.</span> <span class="toc-text">PINVALIDATOR 250 PTS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-3"><span class="toc-number">2.2.1.</span> <span class="toc-text">IDEA:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-2"><span class="toc-number">2.2.2.</span> <span class="toc-text">Solution</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_3--WriteUp">IDK_CURTIN_CTF_2024_WAVE_3--WriteUp</a><time datetime="2024-10-19T03:14:13.000Z" title="Created 2024-10-19 11:14:13">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_2--WriteUp">IDK_CURTIN_CTF_2024_WAVE_2--WriteUp</a><time datetime="2024-10-19T03:13:38.000Z" title="Created 2024-10-19 11:13:38">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_1--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_1--WriteUp">IDK_CURTIN_CTF_2024_WAVE_1--WriteUp</a><time datetime="2024-10-19T03:13:24.000Z" title="Created 2024-10-19 11:13:24">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/01/IDK_ihack%20writeup/" title="IDK_ihack writeup">IDK_ihack writeup</a><time datetime="2024-08-01T04:17:15.000Z" title="Created 2024-08-01 12:17:15">2024-08-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/18/Basic%20of%20Computer%20Theory/" title="Basic of Computer Theory">Basic of Computer Theory</a><time datetime="2024-06-18T13:03:54.000Z" title="Created 2024-06-18 21:03:54">2024-06-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By salad07</div><div class="footer_custom_text"><div class="github-badge"> <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></div>  <div class="github-badge"><span class="badge-subject">Theme</span><span class="badge-value bg-blueviolet">Butterfly</span></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/'
+    this.page.identifier = '/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/'
+    this.page.title = 'IDK_CURTIN_CTF_2024_WAVE_2--WriteUp'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://saladbkp.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="/js/myjs.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,1031 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>IDK_CURTIN_CTF_2024_WAVE_3--WriteUp | Salad の Blog</title><meta name="author" content="salad07"><meta name="copyright" content="salad07"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="CURTIN CTF 2024 PART 3 WAVE 3 WOW WRITEUP CAN UNTIL PART 3 SO LONG AH….. I SOLVED THESE CHAL AT “MORNING”, SERIOUSLY DYING BRAHHH SO THIS WU WILL STILL FOCUS ON CRYPTO AND RE 😩   CRYPTODANCE OF THE S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDK_CURTIN_CTF_2024_WAVE_3--WriteUp">
+<meta property="og:url" content="http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/index.html">
+<meta property="og:site_name" content="Salad の Blog">
+<meta property="og:description" content="CURTIN CTF 2024 PART 3 WAVE 3 WOW WRITEUP CAN UNTIL PART 3 SO LONG AH….. I SOLVED THESE CHAL AT “MORNING”, SERIOUSLY DYING BRAHHH SO THIS WU WILL STILL FOCUS ON CRYPTO AND RE 😩   CRYPTODANCE OF THE S">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2024-10-19T03:14:13.000Z">
+<meta property="article:modified_time" content="2024-10-19T03:14:13.499Z">
+<meta property="article:author" content="salad07">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'IDK_CURTIN_CTF_2024_WAVE_3--WriteUp',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-19 11:14:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/post.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="Salad の Blog"><span class="site-name">Salad の Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">IDK_CURTIN_CTF_2024_WAVE_3--WriteUp</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-10-19T03:14:13.000Z" title="Created 2024-10-19 11:14:13">2024-10-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-10-19T03:14:13.499Z" title="Updated 2024-10-19 11:14:13">2024-10-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ctf/">ctf</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">4.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>26min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="IDK_CURTIN_CTF_2024_WAVE_3--WriteUp"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>CURTIN CTF 2024 PART 3 WAVE 3</p>
+<p>WOW WRITEUP CAN UNTIL PART 3 SO LONG AH….. I SOLVED THESE CHAL AT “MORNING”, SERIOUSLY DYING BRAHHH SO THIS WU WILL STILL FOCUS ON CRYPTO AND RE 😩 </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.2660723.png" alt="A screenshot of a graph Description automatically generated"></p>
+<h1 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO"></a>CRYPTO</h1><h2 id="DANCE-OF-THE-STREAM-385-PTS"><a href="#DANCE-OF-THE-STREAM-385-PTS" class="headerlink" title="DANCE OF THE STREAM 385 PTS"></a>DANCE OF THE STREAM 385 PTS</h2><h3 id="CHAL"><a href="#CHAL" class="headerlink" title="CHAL"></a>CHAL</h3><p> 1. # -*- coding: utf-8 -*-</p>
+<p> 2. “””</p>
+<p> 3. Dance of the Stream</p>
+<p> 4.  </p>
+<p> 5. author: @RDxR10</p>
+<p> 6. “””</p>
+<p> 7.  </p>
+<p> 8. import struct, random</p>
+<p> 9.  </p>
+<p> 10. ROUNDS = 20</p>
+<p> 11.  </p>
+<p> 12. def q_r(a, b, c, d):</p>
+<p> 13.     a = (a + b) &amp; 0xFFFFFFFF</p>
+<p> 14.     d = (d ^ a) &lt;&lt; 16 | (d ^ a) &gt;&gt; (32 - 16)</p>
+<p> 15.     c = (c + d) &amp; 0xFFFFFFFF</p>
+<p> 16.     b = (b ^ c) &lt;&lt; 12 | (b ^ c) &gt;&gt; (32 - 12)</p>
+<p> 17.     a = (a + b) &amp; 0xFFFFFFFF</p>
+<p> 18.     d = (d ^ a) &lt;&lt; 8 | (d ^ a) &gt;&gt; (32 - 8)</p>
+<p> 19.     c = (c + d) &amp; 0xFFFFFFFF</p>
+<p> 20.     b = (b ^ c) &lt;&lt; 7 | (b ^ c) &gt;&gt; (32 - 7)</p>
+<p> 21.     return a, b, c, d</p>
+<p> 22.  </p>
+<p> 23. def stream(key, nonce, counter):</p>
+<p> 24.     state = [0] * 16</p>
+<p> 25.     state[0] = 0x61707865</p>
+<p> 26.     state[1] = 0x3320646e</p>
+<p> 27.     state[2] = 0x79622d32</p>
+<p> 28.     state[3] = 0x6b206574</p>
+<p> 29.     state[4:6] = struct.unpack(“&lt;2L”, key + b’\x00’ * 6)</p>
+<p> 30.     state[6:8] = [0] * 2</p>
+<p> 31.     state[8:12] = [0] * 4</p>
+<p> 32.     state[12] = counter</p>
+<p> 33.     state[13] = nonce &amp; 0xFFFFFFFF</p>
+<p> 34.     state[14] = (nonce &gt;&gt; 32) &amp; 0xFFFFFFFF</p>
+<p> 35.     state[15] = 0</p>
+<p> 36.  </p>
+<p> 37.     working_state = state[:]</p>
+<p> 38.     for _ in range(ROUNDS &#x2F;&#x2F; 2):</p>
+<p> 39.         working_state[0], working_state[4], working_state[8], working_state[12] = q_r(</p>
+<p> 40.             working_state[0], working_state[4], working_state[8], working_state[12]</p>
+<p> 41.         )</p>
+<p> 42.         working_state[1], working_state[5], working_state[9], working_state[13] = q_r(</p>
+<p> 43.             working_state[1], working_state[5], working_state[9], working_state[13]</p>
+<p> 44.         )</p>
+<p> 45.         working_state[2], working_state[6], working_state[10], working_state[14] = q_r(</p>
+<p> 46.             working_state[2], working_state[6], working_state[10], working_state[14]</p>
+<p> 47.         )</p>
+<p> 48.         working_state[3], working_state[7], working_state[11], working_state[15] = q_r(</p>
+<p> 49.             working_state[3], working_state[7], working_state[11], working_state[15]</p>
+<p> 50.         )</p>
+<p> 51.         working_state[0], working_state[5], working_state[10], working_state[15] = q_r(</p>
+<p> 52.             working_state[0], working_state[5], working_state[10], working_state[15]</p>
+<p> 53.         )</p>
+<p> 54.         working_state[1], working_state[6], working_state[11], working_state[12] = q_r(</p>
+<p> 55.             working_state[1], working_state[6], working_state[11], working_state[12]</p>
+<p> 56.         )</p>
+<p> 57.         working_state[2], working_state[7], working_state[8], working_state[13] = q_r(</p>
+<p> 58.             working_state[2], working_state[7], working_state[8], working_state[13]</p>
+<p> 59.         )</p>
+<p> 60.         working_state[3], working_state[4], working_state[9], working_state[14] = q_r(</p>
+<p> 61.             working_state[3], working_state[4], working_state[9], working_state[14]</p>
+<p> 62.         )</p>
+<p> 63.  </p>
+<p> 64.     output = bytearray()</p>
+<p> 65.     for i in range(16):</p>
+<p> 66.         output.extend(struct.pack(“&lt;L”, (working_state[i] + state[i]) &amp; 0xFFFFFFFF))</p>
+<p> 67.     return output</p>
+<p> 68.  </p>
+<p> 69. def stream_e(key, nonce, message):</p>
+<p> 70.     keystream = bytearray()</p>
+<p> 71.     for i in range(0, len(message), 64):</p>
+<p> 72.         keystream.extend(stream(key, nonce, i &#x2F;&#x2F; 64))</p>
+<p> 73.     </p>
+<p> 74.     return bytes([m ^ k for m, k in zip(message, keystream)])</p>
+<p> 75.  </p>
+<p> 76. def o_value(value):</p>
+<p> 77.     o_kie = b’leomessi’</p>
+<p> 78.     return bytes([b ^ o_kie[i % len(o_kie)] for i, b in enumerate(value)])</p>
+<p> 79.  </p>
+<p> 80. class PRNG:</p>
+<p> 81.     def __init__(self, seed):</p>
+<p> 82.         self.state = seed</p>
+<p> 83.         self.update()</p>
+<p> 84.  </p>
+<p> 85.     def update(self):</p>
+<p> 86.         self.state = (self.state * 0x5DEECE66D + 0xB) &amp; 0xFFFFFFFFFFFF</p>
+<p> 87.         self.state ^= self.state &gt;&gt; 33</p>
+<p> 88.         self.state = (self.state * 0xFF51AFD7ED558CCD + 0xC4CEB9B11F7A6F8D) &amp; 0xFFFFFFFFFFFF</p>
+<p> 89.  </p>
+<p> 90.     def get_bytes(self, num_bytes):</p>
+<p> 91.         result = bytearray()</p>
+<p> 92.         for _ in range(num_bytes):</p>
+<p> 93.             self.update()</p>
+<p> 94.             result.append(self.state &amp; 0xFF)</p>
+<p> 95.         return bytes(result)</p>
+<p> 96.  </p>
+<p> 97. def main():</p>
+<p> 98.     nonce = random.getrandbits(64)</p>
+<p> 99.     message = b’REDACTED’</p>
+<p>100.     prng = PRNG(random.randint(1, 9999999999999999999999999999999999999999999999))</p>
+<p>101.     prng_key = prng.get_bytes(2)</p>
+<p>102.     encrypted_message = stream_e(prng_key, nonce, message)</p>
+<p>103.     with open(“ciphertext.txt”, “wb”) as f:</p>
+<p>104.         f.write(encrypted_message)</p>
+<p>105.     </p>
+<p>106.     o_nonce = o_value(struct.pack(“&lt;Q”, nonce))</p>
+<p>107.     with open(“o_nonce.txt”, “wb”) as f:</p>
+<p>108.         f.write(o_nonce)</p>
+<p>109.  </p>
+<p>110. if __name__ == “__main__“:</p>
+<p>111.     main()</p>
+<p>112.  </p>
+<p>WITH 2 FILES ciphertext.txt and o_nonce.txt</p>
+<h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA:"></a>IDEA:</h3><p>Ok focus on 2 points</p>
+<p>Nonce and prng key </p>
+<ol>
+<li>Recover nonce</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.2880769.png" alt="A computer code on a black background Description automatically generated"></p>
+<p>Struck.pack(“&lt;Q”,nonce ) -&gt; unpack and get nonce </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.2890775.png" alt="A black background with text Description automatically generated"></p>
+<p>= 16547628041551419454 </p>
+<ol>
+<li>Prng key</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.2900813.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>Prng_key is get 2 bytes </p>
+<p>Since 2 bytes = 16 bits, so 2^16 possible keys = 65536</p>
+<p>My idea is brute force the key </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.2900813.png" alt="A computer code on a black background Description automatically generated"></p>
+<p>Ok full script </p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p> 1. def recover_nonce(o_nonce):</p>
+<p> 2.     return struct.unpack(“&lt;Q”, o_value(o_nonce))[0]</p>
+<p> 3.  </p>
+<p> 4. def brute_force_key(nonce, encrypted_message):</p>
+<p> 5.     for i in range(65536):  # 0 to 65535</p>
+<p> 6.         key = struct.pack(“&lt;H”, i)  # Create a 2-byte key</p>
+<p> 7.         decrypted_message = stream_e(key, nonce, encrypted_message)</p>
+<p> 8.         # Check if the decrypted message is valid (assuming valid messages are ASCII printable)</p>
+<p> 9.         if all(32 &lt;= b &lt; 127 for b in decrypted_message):</p>
+<p>10.             return key, decrypted_message</p>
+<p>11.     return None, None</p>
+<p>12.  </p>
+<p>13. def main():</p>
+<p>14.     # Load the ciphertext and o_nonce from files</p>
+<p>15.     with open(“ciphertext.txt”, “rb”) as f:</p>
+<p>16.         encrypted_message = f.read()</p>
+<p>17.     </p>
+<p>18.     with open(“o_nonce.txt”, “rb”) as f:</p>
+<p>19.         o_nonce = f.read()</p>
+<p>20.     </p>
+<p>21.     nonce = recover_nonce(o_nonce)</p>
+<p>22.     print(f”Recovered Nonce: {nonce}”)</p>
+<p>23.  </p>
+<p>24.     # Brute force the key</p>
+<p>25.     key, decrypted_message = brute_force_key(nonce, encrypted_message)</p>
+<p>26.  </p>
+<p>27.     if key:</p>
+<p>28.         print(f”Decrypted Message: {decrypted_message}”)</p>
+<p>29.         print(f”Used Key: {key.hex()}”)</p>
+<p>30.     else:</p>
+<p>31.         print(“Failed to decrypt the message with any key.”)</p>
+<p>32.  </p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Recovered Nonce: 16547628041551419454</p>
+<p>Decrypted Message: b’CURTIN_CTF{g0_s0lv3_7h3_57r34m_pr0bl3m_0f_1r0d0v_n0w}’</p>
+<p>Used Key: 1625</p>
+<h2 id="Feel-the-Heat-497-pts-PDE"><a href="#Feel-the-Heat-497-pts-PDE" class="headerlink" title="Feel the Heat 497 pts PDE"></a>Feel the Heat 497 pts PDE</h2><h3 id="Chal"><a href="#Chal" class="headerlink" title="Chal"></a>Chal</h3><p> 1. import numpy as np</p>
+<p> 2. from Crypto.Cipher import DES</p>
+<p> 3. from Crypto.Util.Padding import pad</p>
+<p> 4. from scipy.integrate import odeint</p>
+<p> 5.  </p>
+<p> 6. def des_encrypt(message: bytes, key: bytes) -&gt; bytes:</p>
+<p> 7.     cipher = DES.new(key, DES.MODE_ECB)</p>
+<p> 8.     padded_message = pad(message, DES.block_size)</p>
+<p> 9.     return cipher.encrypt(padded_message)</p>
+<p>10.  </p>
+<p>11. key, k = b”REDACTED”, b’XOXOXOXO’</p>
+<p>12. encrypted_key = bytes([~_ &amp; 0xFF for _ in des_encrypt(key, k)])</p>
+<p>13. print(“Encrypted Key:”, encrypted_key)</p>
+<p>14.  </p>
+<p>15. def encrypt(message, key, t_max=1.0, num_points=100):</p>
+<p>16.     m = np.array([ord(c) for c in message])</p>
+<p>17.     m = np.pad(m, (0, num_points - len(m)), ‘constant’)</p>
+<p>18.     def pde(u, t, D):</p>
+<p>19.         return D * np.gradient(np.gradient(u))</p>
+<p>20.     t = np.linspace(0, t_max, num_points)</p>
+<p>21.     solution = odeint(pde, m, t, args=(key,))</p>
+<p>22.     return solution[-1]</p>
+<p>23.  </p>
+<p>24. message = “REDACTED”</p>
+<p>25. key = float(key)</p>
+<p>26.  </p>
+<p>27. encrypted = encrypt(message, key)</p>
+<p>28. print(“Encrypted:”, encrypted)</p>
+<p>29. np.save(‘encrypted.npy’, encrypted)</p>
+<p>30.  </p>
+<h3 id="IDEA-1"><a href="#IDEA-1" class="headerlink" title="IDEA:"></a>IDEA:</h3><p>(I will mix with Chinese 😭, my high school math level is mostly Chinese ez understand for me ~~~~)</p>
+<p>They encrypted text with key -&gt; pde function -&gt; new encrypted text</p>
+<p>So two process 1 is des decrypt then another is pde reverse </p>
+<ol>
+<li>des decrypt</li>
+</ol>
+<p>since we have the bitwise NOT key, so just reverse back and get the correct key </p>
+<p> 1. from Crypto.Cipher import DES</p>
+<p> 2. from Crypto.Util.Padding import unpad</p>
+<p> 3.  </p>
+<p> 4. # Known variables</p>
+<p> 5. encrypted_key = b’\xad\xe9\x8d\x08c\xc0\xa1DZ\x95n_\x93\xe9\x1arO\xf9!\xa8\xe6H\x92\x87’</p>
+<p> 6. k = b’XOXOXOXO’</p>
+<p> 7.  </p>
+<p> 8. # Apply bitwise NOT to reverse the encryption process</p>
+<p> 9. recovered_encrypted_key = bytes([~_ &amp; 0xFF for _ in encrypted_key])</p>
+<p>10.  </p>
+<p>11. # Decrypt the recovered encrypted key using the same key `k`</p>
+<p>12. cipher = DES.new(k, DES.MODE_ECB)</p>
+<p>13. recovered_key_padded = cipher.decrypt(recovered_encrypted_key)</p>
+<p>14.  </p>
+<p>15. # Remove padding to get the original key</p>
+<p>16. recovered_key = unpad(recovered_key_padded, DES.block_size)</p>
+<p>17. print(“Recovered Key:”, recovered_key)</p>
+<p>18.  </p>
+<p>Recovered Key: b’2.77987109890597’</p>
+<ol>
+<li>pde function</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.30308.png" alt="A computer screen shot of text Description automatically generated"></p>
+<p>So understand the encryption </p>
+<p>M is converting the message to numerical form </p>
+<p>Then padding the array with zeros to a fixed size num_points (100)</p>
+<h3 id="PDE-idk-what-was-this-before"><a href="#PDE-idk-what-was-this-before" class="headerlink" title="PDE !!! (idk what was this before"></a>PDE !!! (idk what was this before</h3><p>Hint: Partial Differential Equation</p>
+<p>What is PDE? 🤨</p>
+<p>A mathematical model of diffusion (Heat Equation) 🥵</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3050838.png" alt="A collage of math equations Description automatically generated"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3060849.png" alt="A math equation with numbers and symbols Description automatically generated with medium confidence"></p>
+<p>U = u(x,t) = value of quantity at position x (100) and time t (1)</p>
+<p>D is the diffusion constant == encryption key == 2.77987109890597</p>
+<p>The result of <img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3070834.png" alt="A black text on a white background Description automatically generated">will be the second derivative of the function with respect to position, representing how the message values diffuse spatially </p>
+<p>Ok I lazy type English liao go CHIENESE ~ HAHAHA</p>
+<p> 人话：</p>
+<p>这个是求解 扩散方程 （公式在上面）</p>
+<p>U(x,t) 是表示 位置 x 和 t 时间的函数值 （but 这边是用byte 表示）</p>
+<p>D 是 扩散系数 for key </p>
+<p>前面的是 时间变化率 后面的是空间上的扩散 （跟着x 的二阶导数）</p>
+<p>But!!!!!!!!!!!!!!!!!!!!!!!!!!!!! In this code, 用了 <strong>数值进似犯法</strong></p>
+<p> How u know? np.gradient(np.gradient(u)) 这个就是 二阶导数近似计算</p>
+<p>会变成<img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3090816.png" alt="A math equation with black text Description automatically generated with medium confidence"></p>
+<p>计算的部分settle了 怎样求解</p>
+<p>solution = odeint(pde, m, t, args=(key,))</p>
+<p>这个是什么东东？ </p>
+<p>简单来讲 做后面的东西<img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3100812.png" alt="A red rectangular with black text Description automatically generated"></p>
+<p>Then 是从 0 – tmax (100) 丢进 pde function 然后return 解</p>
+<p>最后那个return solution[-1] 就是show tmax 时候的 解 == encrypted data </p>
+<p>logic讲完了 怎样solve? </p>
+<p>First idea 是逆转 扩散函数</p>
+<p>既然是 两次微分 dydx 应该就能积分回去 应该….. should be, maybe, perhaps</p>
+<p>然后我发现可以用 – to the pde function 就能让扩散反向进行</p>
+<p>Wow So 看一下 odeint function </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3120828.png" alt="A screen shot of a computer program Description automatically generated"></p>
+<p>需要function 逆向回去 可以用lambda 然后para 放 u 和 t, then 用 odeint solve</p>
+<p>lambda u, t: -pde(u, t, key)</p>
+<p>odeint(lambda u, t: -pde(u, t, key), encrypted_data, t)</p>
+<p>!!!! 然后记得拿 solution[-1]</p>
+<h3 id="Full-script"><a href="#Full-script" class="headerlink" title="Full script"></a>Full script</h3><p> 1. import numpy as np</p>
+<p> 2. from scipy.integrate import odeint</p>
+<p> 3.  </p>
+<p> 4. # 加载加密数据</p>
+<p> 5. encrypted_data = np.load(‘encrypted.npy’)</p>
+<p> 6.  </p>
+<p> 7. # 假设我们知道 D 的值</p>
+<p> 8. key = 2.77987109890597</p>
+<p> 9. num_points = len(encrypted_data)</p>
+<p>10.  </p>
+<p>11. # 使用数值求解方法推导出 u 的原始值</p>
+<p>12. def reverse_encrypt(encrypted_data, key, num_points):</p>
+<p>13.     # 构造一个假设的初始条件</p>
+<p>14.     u0 = np.zeros(num_points)  # 初始条件</p>
+<p>15.     t = np.linspace(0, 1, num_points)</p>
+<p>16.  </p>
+<p>17.     # 构造 PDE 的逆向求解</p>
+<p>18.     def pde(u, t, D):</p>
+<p>19.         return D * np.gradient(np.gradient(u))</p>
+<p>20.  </p>
+<p>21.     # 进行逆向积分</p>
+<p>22.     solution = odeint(lambda u, t: -pde(u, t, key), encrypted_data, t)</p>
+<p>23.     </p>
+<p>24.     return solution[-1]</p>
+<p>25.  </p>
+<p>26. # 逆向推导</p>
+<p>27. recovered_values = reverse_encrypt(encrypted_data, key, num_points)</p>
+<p>28.  </p>
+<p>29. # 将推导出的值转换为字符</p>
+<p>30. recovered_message = ‘’.join(chr(int(round(value))) for value in recovered_values if value &gt; 0)</p>
+<p>31.  </p>
+<p>32. print(“Recovered Message:”, recovered_message)</p>
+<p>33.  </p>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p>Recovered Message: CURTIN_CTF{con57r41n3d_0p71m1z4710n}</p>
+<p>Tutto Bene 496 PTS</p>
+<p>CHAL </p>
+<p> 1. import os, hashlib, random, binascii</p>
+<p> 2.  </p>
+<p> 3. flag = “REDACTED”</p>
+<p> 4. h = “”</p>
+<p> 5.  </p>
+<p> 6. for i in range(0, len(flag), 2):</p>
+<p> 7.     pair = flag[i:i+2]</p>
+<p> 8.     print(pair)</p>
+<p> 9.     a = random.randint(1, 16)</p>
+<p>10.     b = random.randint(1, 16)</p>
+<p>11.     </p>
+<p>12.     h += binascii.hexlify(os.urandom(random.randint(0, 31))).decode(‘utf-8’)</p>
+<p>13.     hash_value = hashlib.sha512(pair.encode(‘utf-8’)).hexdigest()</p>
+<p>14.     if a &lt; len(hash_value) and b &lt; len(hash_value) and a &lt; len(hash_value) - b:</p>
+<p>15.         h += hash_value[a:-b][::-1]</p>
+<p>16.     else:</p>
+<p>17.         h += hash_value[::-1]</p>
+<p>18.     </p>
+<p>19.     h += binascii.hexlify(os.urandom(random.randint(0, 31))).decode(‘utf-8’)</p>
+<p>20.  </p>
+<p>21. print(h)</p>
+<p>22.  </p>
+<p>IDEA:</p>
+<p>Print 1 by 1 and see what actually doing </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3220844.png" alt="A computer screen with numbers Description automatically generated"></p>
+<p>Analysis the code </p>
+<p>Random get a and b -&gt; generate a random h -&gt; Sha512 to the pair of flag -&gt; Cut from front and back -&gt; generate another random h -&gt; h+=</p>
+<p>IDEA is building all possible pairs then -&gt; loop every cut possible -&gt; generate hash -&gt; find in text -&gt; return position -&gt; combine back</p>
+<p>Issue: </p>
+<p>The length of cut hash &gt; 96 (128 -16 -16)</p>
+<p>maybe the pair could be same so need to check duplicate or not 血之教训 😭</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3240855.png"></p>
+<p>Full script</p>
+<p>Very long … include testing</p>
+<p> 1. import hashlib</p>
+<p> 2. import itertools</p>
+<p> 3. import string</p>
+<p> 4.  </p>
+<p> 5. parhash_list = []</p>
+<p> 6.  </p>
+<p> 7. def find_partial_hash_in_text(key_hash, text):</p>
+<p> 8.     # 生成 key_hash 的所有可能子串并进行反转</p>
+<p> 9.     got = False</p>
+<p> 10.     count = 0</p>
+<p> 11.     parhash_list.clear()</p>
+<p> 12.     for start in range(len(key_hash)):</p>
+<p> 13.         position_last = 0</p>
+<p> 14.         for end in range(start + 1, len(key_hash) + 1):</p>
+<p> 15.             # 提取子串并反转</p>
+<p> 16.             partial_hash = key_hash[start:end][::-1]</p>
+<p> 17.             # 检查子串长度是否大于96</p>
+<p> 18.             if len(partial_hash) &gt; 95:</p>
+<p> 19.                 # 检查反转后的部分哈希是否在 text 中                </p>
+<p> 20.                 count = text.count(partial_hash)</p>
+<p> 21.                 if(count == 0):</p>
+<p> 22.                     break</p>
+<p> 23.                 # print(count)</p>
+<p> 24.                 for i in range(count):</p>
+<p> 25.                     position = text.find(partial_hash,position_last)  # 找到第i个匹配的位置</p>
+<p> 26.                     </p>
+<p> 27.                     if(position not in parhash_list):</p>
+<p> 28.                         </p>
+<p> 29.                         if position != -1:  # 如果找到</p>
+<p> 30.                             parhash_list.append(position)</p>
+<p> 31.                             print(f”Found partial hash: {partial_hash} at position: {position}”)</p>
+<p> 32.                             # 使用双引号标记出找到的部分</p>
+<p> 33.                             highlighted_text = text[:position] + f’”{partial_hash}”‘ + text[position + len(partial_hash):]</p>
+<p> 34.                             print(f”Highlighted text: {highlighted_text}”)</p>
+<p> 35.                             position_last = position</p>
+<p> 36.                             got = True</p>
+<p> 37.     return got</p>
+<p> 38.  </p>
+<p> 39. def find_continuous_sublists(nums):</p>
+<p> 40.     # Create a result list to store the sublists’ starting points</p>
+<p> 41.     result = []</p>
+<p> 42.     </p>
+<p> 43.     # Initialize the first sublist with the first element</p>
+<p> 44.     sublist_start = nums[0]</p>
+<p> 45.  </p>
+<p> 46.     for i in range(1, len(nums)):</p>
+<p> 47.         # If the current number is not consecutive to the previous, append the start</p>
+<p> 48.         # of the sublist and update the sublist start</p>
+<p> 49.         if nums[i] != nums[i-1] + 1:</p>
+<p> 50.             result.append(sublist_start)</p>
+<p> 51.             sublist_start = nums[i]</p>
+<p> 52.     </p>
+<p> 53.     # Append the last sublist start after the loop ends</p>
+<p> 54.     result.append(sublist_start)</p>
+<p> 55.     </p>
+<p> 56.     return result</p>
+<p> 57.  </p>
+<p> 58. char_set = string.printable</p>
+<p> 59. text = “8b1de8b2e359021a600fa563b32b3b15ab00d1b0855ad49ca587fcbb282eab663f0deab17a64550439f305a5d7934073bcf333d13539889e63127c7fe444b67b2fe5421425f1420f51b84a3bcbe9244dd1c22240e7e2a1298c86b279a2cf519afb46a9c3c03f2b11dee991656081966fca2eba678688add5ec0167aa13eb22086bf118e2f793f1e5aa76fe4b624a07555e19fa87e2960fc4856308f882fb82a9680fcb372ddca52c4966db571730c24673aaa15332685099929c7b731df0ae66923f12b7b00083581c1bad336e303fc27bb224a26de11e50d99588ef0437801060e29e2d82413a5c5982f4aa921f6397d5a2d1ab08babfcc398ae1018e698503f63aede751f5fe337ff8f7af08f6b6bf893d284fbcf3b142e1d40d0b3a4761f7822df057eacf76b736941640d9d000741dee062fee15a109d06d2687dca53c1f5badab48fc748d321b9c1e3e2c9025a6aeedabca8f3beb48f98e9ab75a0b7e6191edb34643309a4b3bc5ffdcdec697aa990545926aca949986c87b924b729f68c8728803a4e21e30e05cf6ed9badb1a826987018fbfef52df8df93e7fba4b0f130a06bbd547d6a772ddb3858682c16ffb831338b7fc8a87366076804f0211244c356de762cef0d3d86b2554e08665229e4aeb36d915de35ff3c0cfb01c87139cc76d72ace3c510fa8a9704d3b43c63456084d2855fd89e2f22dd0a6869ada5a3b450ab98f0d26e1c8e8a272957ef96dc0adb487e6295ec59c27ca087d99aae789be61d518b77094a4cdd77d6f010c72bd8fd8cc45aaf6765c18bbe8a9377ce089888815ed71ab4d06eeab41de4b2b62441604522943723622ba17f7a502ff58efac72e60c9021b3103869a91d85a165a974c40b9e854882d28ab55d03312defa640c1cc0dd9a4afb39be893cab6fc7d06feef091d38376fbf67840a789aacee53cafb0e94053daf687289be820dde284f61c1e54f2690850c5bf00c0d72f0142f7e203e2ebd5360f41abdec484d6009f9254218af15ffb787604328124c5ee9bce73a17c6934c5633e9d121f5aaa51bb0c312e626c0a3545e4bb78e35e725e68f868f6f85f3bb6b8598567b23d087112b4d91b8aeaac4073a8e5c247c9ad523527d5d8d6c40703b6641f29c54622ed297ad2e2de59ca5a87ef6cc38e72c6996f9e3c01b7580d03ba744f68a6882ade9a90b2de6f53160e9a23e81b749faea9269dd239a7ada416c42c70ce2cbae5c88a4ce73269e6cabff2a3fe2c615faf6235839aeb3866d5fa38c4c90b69a0fc806da0916fbcb3a40928b9b63f585ec9a05182d84703ade0f28b22cfe659c05754b7a68a1dbb4d98d25af3e6d2d2551f00090c767e5d6d96755033e23647fd118851af5937bd20407d4055881815e29c4462fd7b1accbb97912981c2232e019cfd5ce73a09f39f3712d131b2bc109888feeaff8efa8ec7373d35588d44ca73515e103c520d01c18444c92ea0e35680ae5b88e4ae5485aec878714f286c6d133cf87a19ca0b487bc07e6f3f91017c0d32a3830a0db66ec0f79efa59ee6ccef7d8fbce63e06cf14ad39c4bf54b82fb732b23b88aaa09e1871d7dbb715a227aa2680ef904e0ad5b81ee533b516290909a0e1138e4093e0b08156d122db0026b96825dd0352771d1e4f5e89ef6a26b0fbf3e79f881f423d25297af8027bec9712e83a1fdd8fb8feaefc2aa3835d168d592d67be04068282cec525b9a11244823c87bf7c72d9cbb371be449707da918f7dfbb4fca13db050ee9bf084a6d84f5d41cce9716be5be59d827d3df42932fcede5eabb4475f7f6873898e90cc1a847f631252354034dc662b77fcdc4f0567d77138c7ce59c1aa273de34781bbc665abb217836a48d3ba1d6d34d329d093fb9200ecb850424c1f5ec29303fd11b0d9d58ffe56a6dadca1286e162e77ad1189e37444a9c0895b65829154ab1b0e104712851b9739352ae287fec66d1991bab631480ae27c3c8301633a8ab3a6412b100b0895b6cb931ae752fdb4d3ce94050f8e75610c1a560518ae3b28c075398fb9994a162a5c83d66fd603181815d7b7733e857a2d35584c3cb1e143051b1d86474cc7b5372d1cc5bb14ccbaf17b17e87ab8bc28dbeb13792a807b0c8419fffdec8cbff4b3e094f91e6386c938871945ab438e20db458ec1a539c2addfc60e30e78b5c5ac106ca2acc29571088608b5da1f7450d7fcc707b3642a62f9f8404920ada43b4e78a15e0dbe056e11975741492ebdeeb0e7fe50ebcd5c866e7d6e3ff8b48932fedb11d6ac6f28332248aa43f92d9f515abdfe82d2cdf127dbb1b6a559e6a607502a2d259e5246659fe92e1c0dce0af168a2bd56aa805ffbf056af829eaba38f455f44a8660629b7c9512ca55846a5fba0e1f6ec879bed2f74eb1cd0449fce8fcbfdf488a6942094a581ced68d9ac48ce0a444f3220b4572fdbf95e3c0ac263c699f3e763af7fe4f057888d42bcd2d5627d95f73dca94abfdf8f4aa348ef0c8e819ccf7c73b616872e3eea62ce5e02625b440a51775d612e6fce05a1af5f1774e379905f537c3b501c5678af792a7e513bac39a072987bff0f41d16cafbb66cc61a963bac0138a874c909623ef8cb1f82ceca4a71b8e5eb03101140f85913aaf993f13de0e685eb8fa9226ea8c0829e99ced6e02652e5838a8b5ac2a84b1b6df0847fff7b02495f310302bc572982af51e615779e62ab75c1b83436f48bc8665da684391eb5594e2bd79d09fe298c503b004a18c09f4a6947d77138c7ce59c1aa273de34781bbc665abb217836a48d3ba1d6d34d329d093fb9200ecb850424c1f5ec29303fd11b0d9d58ffe56a6dadca1229bbcb621b1f11f06b42aa8215614e8b812b00de96a4b2d4a1b9bff5ad2bd8fdb818fca7a325bbbcd77a58ba2cdabc9edb78755298f4baf658d90c4d07ab4f35713707cba7fcbe6527b36a2ee34fb1db92a476956cbcfea478f595567e022e3ec382fcbe1a8404dc838880ae5b88e4ae5485aec878714f286c6d133cf87a19ca0b487bc07e6f3f91017c0d32a3830a0db66ec0f79efa59ee6ccef7d8fbce1bcce207bf99fa4a8a9472089c38fd5ae710809f647d09a489bc196b076144487fc52da5a127176bc357c8b3899ae31ec684298df93a73193cb9b001710f297a4869d747ed297cc9a525601d88fd7b0e15c17bea7391dea6f0a015fd0a8e6fb96befed4c4f583fee6356f69939ca3c8f18faffc86154f4237cdd8f350a8cf355ff572933cc6884b51f5f07dc8bb5c5107e92ee1b00b974fcf3a6efd004e77ddd01b54c2876b48a99850c2bfac”</p>
+<p> 60.  </p>
+<p> 61. output_list = []</p>
+<p> 62.  </p>
+<p> 63. for pair in itertools.product(char_set, repeat=2):</p>
+<p> 64. #     # Join the tuple into a string</p>
+<p> 65.     pair_str = ‘’.join(pair)</p>
+<p> 66.     key_hash = hashlib.sha512(pair_str.encode(‘utf-8’)).hexdigest()</p>
+<p> 67.     if find_partial_hash_in_text(key_hash, text):</p>
+<p> 68.         print(“Partial hash exists in text.”,pair_str)</p>
+<p> 69.         print(“COUNT”,parhash_list)</p>
+<p> 70.         parhash_list.sort()</p>
+<p> 71.         result = find_continuous_sublists(parhash_list)</p>
+<p> 72.         output = (pair_str,result)</p>
+<p> 73.         output_list.append(output)</p>
+<p> 74.         print(output)  # Output will be [46]</p>
+<p> 75.     else:</p>
+<p> 76.         print(“Partial hash does not exist in text.”,pair_str)</p>
+<p> 77. print(output_list)</p>
+<p> 78.  </p>
+<p> 79. output_list = [(‘07’, [1012]), (‘3m’, [3217]), (‘3_‘, [2612, 3913]), (‘4p’, [1709]), (‘5_‘, [3405]), (‘70’, [3579]), (‘7h’, [2432]), (‘cp’, [2766]), (‘d_‘, [2292]), (‘f1’, [4070]), (‘h1’, [1162]), (‘n3’, [2096, 4240]), (‘n9’, [1360]), (‘p3’, [1930]), (‘s3’, [3056]), (‘u_‘, [2891]), (‘CU’, [44]), (‘IN’, [356]), (‘RT’, [216]), (‘TF’, [701]), (‘_b’, [3728]), (‘_h’, [1531]), (‘_C’, [506]), (‘{n’, [844]), (‘} ‘, [4372])]</p>
+<p> 80.  </p>
+<p> 81. foundlist = []</p>
+<p> 82. foundlistpos = []</p>
+<p> 83. for i in output_list:</p>
+<p> 84.     name = i[0]</p>
+<p> 85.     value = i[-1]</p>
+<p> 86.     lengthpos = len(value)</p>
+<p> 87.     for i2 in range(lengthpos):</p>
+<p> 88.         foundlist.append(name)</p>
+<p> 89.         foundlistpos.append(value[i2])</p>
+<p> 90. print(foundlist)</p>
+<p> 91. print(foundlistpos)</p>
+<p> 92. # 将标签和对应的值组合成元组</p>
+<p> 93. combined = list(zip(foundlist, foundlistpos))</p>
+<p> 94.  </p>
+<p> 95. # 按照值进行排序</p>
+<p> 96. sorted_combined = sorted(combined, key=lambda x: x[1])</p>
+<p> 97.  </p>
+<p> 98. # 提取排序后的标签</p>
+<p> 99. sorted_labels = [label for label, value in sorted_combined]</p>
+<p>100.  </p>
+<p>101. # 将标签转换为 flag 形式</p>
+<p>102. flag = ‘’.join(sorted_labels)</p>
+<p>103.  </p>
+<p>104. print(“Sorted Flag:”, flag)</p>
+<p>105.  </p>
+<p>106. # Output will be []</p>
+<p>107. # pair_str = “3_“</p>
+<p>108. # # pair_str = “3m”</p>
+<p>109. # key_hash = hashlib.sha512(pair_str.encode(‘utf-8’)).hexdigest()</p>
+<p>110.  </p>
+<p>111. # if find_partial_hash_in_text(key_hash, text):</p>
+<p>112. #     print(“Partial hash exists in text.”)</p>
+<p>113. # else:</p>
+<p>114. #     print(“Partial hash does not exist in text.”)</p>
+<p>115. # print(“COUNT”,parhash_list)</p>
+<p>116. # parhash_list.sort()</p>
+<p>117. # print(“PARTIAL”,parhash_list)</p>
+<p>118. # result = find_continuous_sublists(parhash_list)</p>
+<p>119. # print(result)  # Output will be [46]</p>
+<p>120.  </p>
+<p>Output</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3420887.png"></p>
+<p>CURTIN_CTF{n07h1n9_h4pp3n3d_7h3_cpu_s33m5_70_b3_f1n3}</p>
+<h1 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h1><h2 id="sl-eep-500-pts"><a href="#sl-eep-500-pts" class="headerlink" title="sl_eep 500 pts"></a>sl_eep 500 pts</h2><p>check ida, find string </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3430893.png" alt="A screenshot of a computer Description automatically generated"></p>
+<h3 id="Chal-1"><a href="#Chal-1" class="headerlink" title="Chal"></a>Chal</h3><p> 1. __int64 __fastcall checker(char *s1)</p>
+<p> 2. {</p>
+<p> 3. unsigned int v1; &#x2F;&#x2F; ebp</p>
+<p> 4. char v3; &#x2F;&#x2F; al</p>
+<p> 5. char v4; &#x2F;&#x2F; dl</p>
+<p> 6. char v5; &#x2F;&#x2F; cl</p>
+<p> 7. __int64 v6; &#x2F;&#x2F; rax</p>
+<p> 8. __int64 i; &#x2F;&#x2F; r12</p>
+<p> 9. __int64 j; &#x2F;&#x2F; rax</p>
+<p>10. int v9[18]; &#x2F;&#x2F; [rsp+0h] [rbp-100h]</p>
+<p>11. int v10[11]; &#x2F;&#x2F; [rsp+48h] [rbp-B8h] BYREF</p>
+<p>12. int v11[35]; &#x2F;&#x2F; [rsp+74h] [rbp-8Ch]</p>
+<p>13.  </p>
+<p>14. v11[5] = 1290;</p>
+<p>15. v11[6] = 1347;</p>
+<p>16. v11[7] = 1354;</p>
+<p>17. v11[8] = 1356;</p>
+<p>18. v11[9] = 1375;</p>
+<p>19. v11[10] = 1368;</p>
+<p>20. v11[11] = 1370;</p>
+<p>21. v11[12] = 1282;</p>
+<p>22. v11[13] = 1375;</p>
+<p>23. v11[14] = 1345;</p>
+<p>24. v11[15] = 1365;</p>
+<p>25. v11[16] = 1368;</p>
+<p>26. v11[17] = 1370;</p>
+<p>27. v11[18] = 1288;</p>
+<p>28. v11[19] = 1366;</p>
+<p>29. v11[20] = 1367;</p>
+<p>30. v11[21] = 1346;</p>
+<p>31. v11[22] = 1364;</p>
+<p>32. v11[23] = 1290;</p>
+<p>33. v11[24] = 1358;</p>
+<p>34. v10[8] = 84;</p>
+<p>35. v10[9] = 66;</p>
+<p>36. v10[10] = 69;</p>
+<p>37. v11[0] = 67;</p>
+<p>38. v11[1] = 94;</p>
+<p>39. v11[2] = 89;</p>
+<p>40. v10[0] = 43;</p>
+<p>41. v10[1] = 45;</p>
+<p>42. v10[2] = 62;</p>
+<p>43. v10[3] = 54;</p>
+<p>44. v10[4] = 49;</p>
+<p>45. v1 = 0;</p>
+<p>46. if ( strlen(s1) == 48 )</p>
+<p>47. {</p>
+<p>48. v3 = s1[25];</p>
+<p>49. if ( v3 == s1[32] )</p>
+<p>50. {</p>
+<p>51. v4 = s1[38];</p>
+<p>52. if ( v3 == v4 )</p>
+<p>53. {</p>
+<p>54. v5 = s1[41];</p>
+<p>55. if ( v4 == v5 )</p>
+<p>56. {</p>
+<p>57. if ( s1[43] == v5 &amp;&amp; v3 == 95 )</p>
+<p>58. {</p>
+<p>59. v6 = 5LL;</p>
+<p>60. v1 = 1;</p>
+<p>61. do</p>
+<p>62. {</p>
+<p>63. if ( (s1[v6] ^ 0x53B) != v11[v6] )</p>
+<p>64. v1 = 0;</p>
+<p>65. ++v6;</p>
+<p>66. }</p>
+<p>67. while ( v6 != 25 );</p>
+<p>68. for ( i = 26LL; i != 32; ++i )</p>
+<p>69. {</p>
+<p>70. if ( (char)(s1[i] ^ 0x37) != v9[i] )</p>
+<p>71. {</p>
+<p>72. printf(“failed second check %c\n”, (unsigned int)s1[i]);</p>
+<p>73. v1 = 0;</p>
+<p>74. }</p>
+<p>75. }</p>
+<p>76. for ( j = 33LL; j != 38; ++j )</p>
+<p>77. {</p>
+<p>78. if ( (s1[j] ^ 0x5F) != v10[j - 33] )</p>
+<p>79. v1 = 0;</p>
+<p>80. }</p>
+<p>81. if ( s1[39] != 97 )</p>
+<p>82. v1 = 0;</p>
+<p>83. if ( s1[40] != 116 )</p>
+<p>84. v1 = 0;</p>
+<p>85. if ( !strncmp(s1 + 17, “3&#x2F;4}”, 4uLL) &amp;&amp; !strncmp(s1, “flag{“, 5uLL) &amp;&amp; s1[42] == 57 )</p>
+<p>86. return 0;</p>
+<p>87. }</p>
+<p>88. else</p>
+<p>89. {</p>
+<p>90. return 0;</p>
+<p>91. }</p>
+<p>92. }</p>
+<p>93. }</p>
+<p>94. }</p>
+<p>95. }</p>
+<p>96. return v1;</p>
+<p>97. }</p>
+<p>98.  </p>
+<p>Check the winning condition </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3590925.png" alt="A close-up of a computer screen Description automatically generated"></p>
+<h3 id="IDEA-2"><a href="#IDEA-2" class="headerlink" title="IDEA:"></a>IDEA:</h3><p>Follow the sequence and fill in </p>
+<p>Ps: check IDA AND GHIRA at the same time !!!!!!!!!! v[9] only can find in ghidra (maybe on me)</p>
+<p>For me only 2 chal</p>
+<p>1 align back character</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3600924.png" alt="A white background with black text Description automatically generated"> </p>
+<p>2 xor back character</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.361095.png" alt="A red line with numbers and symbols Description automatically generated"></p>
+<p>There is an issue in this chal </p>
+<p>This code is to insert s1 17-20 with “3&#x2F;4}” </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3621016.png"></p>
+<p>But this is weird that to put } in middle and cant make the flag len be 48, so I just put behind </p>
+<p>Since this is quite direct so just provide full script </p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p> 1. # 定义 v11 和 v10 数组</p>
+<p> 2. v11 = [</p>
+<p> 3.     67,</p>
+<p> 4.     94,</p>
+<p> 5.     89,</p>
+<p> 6.     0,</p>
+<p> 7.     0,</p>
+<p> 8.     1290,</p>
+<p> 9.     1347,</p>
+<p> 10.     1354,</p>
+<p> 11.     1356,</p>
+<p> 12.     1375,</p>
+<p> 13.     1368,</p>
+<p> 14.     1370,</p>
+<p> 15.     1282,</p>
+<p> 16.     1375,</p>
+<p> 17.     1345,</p>
+<p> 18.     1365,</p>
+<p> 19.     1368,</p>
+<p> 20.     1370,</p>
+<p> 21.     1288,</p>
+<p> 22.     1366,</p>
+<p> 23.     1367,</p>
+<p> 24.     1346,</p>
+<p> 25.     1364,</p>
+<p> 26.     1290,</p>
+<p> 27.     1358</p>
+<p> 28. ]</p>
+<p> 29.  </p>
+<p> 30. print(len(v11))</p>
+<p> 31.  </p>
+<p> 32. v10 = [</p>
+<p> 33.     43, 45, 62, 54, 49,0,0,0, 84, 66, 69,00</p>
+<p> 34. ]</p>
+<p> 35.  </p>
+<p> 36. v10 = [</p>
+<p> 37.     0x2b,</p>
+<p> 38.     0x2d,</p>
+<p> 39.     0x3e,</p>
+<p> 40.     0x36,</p>
+<p> 41.     0x31</p>
+<p> 42. ]</p>
+<p> 43. # 定义 v9 数组</p>
+<p> 44. v9 = [0] * 8  # 26-31是6个字符</p>
+<p> 45. v9 = [</p>
+<p> 46.     0x54,</p>
+<p> 47.     0x42,</p>
+<p> 48.     0x45,</p>
+<p> 49.     0x43,</p>
+<p> 50.     0x5e,</p>
+<p> 51.     0x59</p>
+<p> 52. ]</p>
+<p> 53. # 构造字符串的其他部分</p>
+<p> 54. s1 = [‘’] * 48</p>
+<p> 55.  </p>
+<p> 56. # 确保满足条件</p>
+<p> 57. s1[25] = s1[32] = s1[38] = s1[41] = s1[43] = ‘_‘</p>
+<p> 58. s1[39] = ‘a’</p>
+<p> 59. s1[40] = ‘t’</p>
+<p> 60. s1[42] = ‘9’</p>
+<p> 61.  </p>
+<p> 62. # # 填充 v9 的值</p>
+<p> 63. # for i in range(6):</p>
+<p> 64. #     v9[i] = (i + 26) ^ 0x37  # 根据原 C 代码位置推导</p>
+<p> 65.  </p>
+<p> 66. # 计算 s1[5] 到 s1[24]</p>
+<p> 67. print(“part1”)</p>
+<p> 68. i = 0</p>
+<p> 69. for i in range(5, 25):</p>
+<p> 70.     # 使用 v11[i] 直接进行位异或运算</p>
+<p> 71.     print(i,chr(v11[i]^0x53B))</p>
+<p> 72.     s1[i] = chr(v11[i]^0x53B)</p>
+<p> 73.     i += 1</p>
+<p> 74.  </p>
+<p> 75.     # s1[i] = chr(v11[i] ^ 0x53B)</p>
+<p> 76. print(“part2”)</p>
+<p> 77. i = 0</p>
+<p> 78. for i in range(26,32):</p>
+<p> 79.     print(i,chr(v9[i-26] ^ 0x37))</p>
+<p> 80.     s1[i] = chr(v9[i-26] ^ 0x37)</p>
+<p> 81.     i += 1</p>
+<p> 82.  </p>
+<p> 83. print(“part3”)</p>
+<p> 84. # # 计算 s1[33] 到 s1[37]</p>
+<p> 85. for i in range(33, 38):</p>
+<p> 86.     s1[i] = chr(v10[i - 33] ^ 0x5F)</p>
+<p> 87.     print(i,chr(v10[i - 33] ^ 0x5F))</p>
+<p> 88. print(“part4”)</p>
+<p> 89.  </p>
+<p> 90. # # 插入 flag 的固定部分</p>
+<p> 91. s1[0:5] = list(“flag{“)</p>
+<p> 92. print(s1)</p>
+<p> 93. # s1[17:21] = list(“3&#x2F;4}”) # ida</p>
+<p> 94. s1[44:48] = list(“3&#x2F;4}”)</p>
+<p> 95. i2 = 0</p>
+<p> 96. for i in s1:</p>
+<p> 97.     if(i==“”):</p>
+<p> 98.         print(i2)</p>
+<p> 99.     # print(i)</p>
+<p>100.     i2 += 1</p>
+<p>101. print(len(s1))</p>
+<p>102. # # # 生成完整字符串</p>
+<p>103. result = ‘’.join(s1)</p>
+<p>104.  </p>
+<p>105. # # # 检查字符串长度</p>
+<p>106. if len(result) == 48:</p>
+<p>107.     print(“Generated string:”, result)</p>
+<p>108. else:</p>
+<p>109.     print(“Error: The generated string does not have the correct length.”)</p>
+<p>110.     print(len(result),result)</p>
+<p>111.  </p>
+<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><p>flag{1xqwdca9dznca3mlyo1u_curtin_train_at_9_3&#x2F;4}</p>
+<h2 id="Bigtactoe-500-PTS"><a href="#Bigtactoe-500-PTS" class="headerlink" title="Bigtactoe 500 PTS"></a>Bigtactoe 500 PTS</h2><h3 id="Game-flow"><a href="#Game-flow" class="headerlink" title="Game flow"></a>Game flow</h3><p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3771064.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>The logic is player vs bot then need to straight win the tactoe?</p>
+<p>What I found is some moves are not allow player to input</p>
+<h3 id="IDEA-3"><a href="#IDEA-3" class="headerlink" title="IDEA:"></a>IDEA:</h3><p>Check ida</p>
+<p> 1. void __fastcall sub_1411(__int64 a1)</p>
+<p> 2. {</p>
+<p> 3. char k; &#x2F;&#x2F; al</p>
+<p> 4. FILE *stream; &#x2F;&#x2F; [rsp+18h] [rbp-18h]</p>
+<p> 5. int j; &#x2F;&#x2F; [rsp+24h] [rbp-Ch]</p>
+<p> 6. int i; &#x2F;&#x2F; [rsp+28h] [rbp-8h]</p>
+<p> 7. int v5; &#x2F;&#x2F; [rsp+2Ch] [rbp-4h]</p>
+<p> 8.  </p>
+<p> 9. v5 = 0;</p>
+<p>10. for ( i = 0; i &lt;= 8; ++i )</p>
+<p>11. {</p>
+<p>12. for ( j = 0; j &lt;= 8 &amp;&amp; *(_DWORD *)(a1 + 36LL * i + 4LL * j) == dword_42A0[9 * i + j]; ++j )</p>
+<p>13. ++v5;</p>
+<p>14. }</p>
+<p>15. if ( v5 == 81 &amp;&amp; (unsigned int)sub_123A() == 1 )</p>
+<p>16. {</p>
+<p>17. printf(“You win!”);</p>
+<p>18. stream = fopen(“flag.txt”, “r”);</p>
+<p>19. for ( k = fgetc(stream); k != -1; k = fgetc(stream) )</p>
+<p>20. putchar(k);</p>
+<p>21. fclose(stream);</p>
+<p>22. }</p>
+<p>23. }</p>
+<p>24.  </p>
+<p>Win condition is let v5 = 81 and sub_123A ==1</p>
+<p>To read the code the for loop above is like init and check array under 81 size, not really affect to win</p>
+<p>Ok then go inside sub_123A</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3831081.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>The condition to win is xor list 45A0 with 0x7175 == list 4080</p>
+<p>4080 provided </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3831081.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>But where is 45A0, it is input and save this a list </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3840997.png" alt="A screenshot of a computer code Description automatically generated"></p>
+<p>Ok my idea is need to input a list which XOR with 0x7175 == 4080</p>
+<p>Then write script </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.3848362.png"></p>
+<p>But this is wrong, why?</p>
+<p>They minus 1 for the input ….</p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.385839.png" alt="A screenshot of a computer program Description automatically generated"></p>
+<h3 id="Full-script-1"><a href="#Full-script-1" class="headerlink" title="Full script"></a>Full script</h3><p> 1. # dword_4080 列表中保存了 sub_123A 中的值</p>
+<p> 2. dword_4080 = [</p>
+<p> 3.     0x7138, 0x713B, 0x7173, 0x716F, 0x713F, 0x7132, 0x7160, 0x714C,</p>
+<p> 4.     0x7140, 0x7170, 0x714E, 0x7154, 0x7177, 0x713A, 0x717C, 0x714B,</p>
+<p> 5.     0x713E, 0x7172, 0x7163, 0x714A, 0x713C, 0x7146, 0x715A, 0x7176,</p>
+<p> 6.     0x7159, 0x716D, 0x7168, 0x7161, 0x715F, 0x7158, 0x716E, 0x7162,</p>
+<p> 7.     0x714D, 0x7153, 0x7174, 0x7151, 0x7156, 0x7164, 0x7143, 0x7149,</p>
+<p> 8.     0x7167</p>
+<p> 9.  </p>
+<p>10. ]</p>
+<p>11. print(len(dword_4080))</p>
+<p>12.  </p>
+<p>13. # 0x7175 是常量，用来异或</p>
+<p>14. xor_value = 0x7175</p>
+<p>15.  </p>
+<p>16. # 计算 dword_45A0 列表</p>
+<p>17. dword_45A0 = [val ^ xor_value for val in dword_4080]</p>
+<p>18.  </p>
+<p>19. # 输出计算得到的 dword_45A0 列表</p>
+<p>20. print(“dword_45A0:”, dword_45A0)</p>
+<p>21.  </p>
+<p>22. # 定义 sub_123A 函数进行验证</p>
+<p>23. def sub_123A(dword_45A0, dword_4080, xor_value):</p>
+<p>24.     for i in range(41):</p>
+<p>25.         if (dword_45A0[i] ^ xor_value) != dword_4080[i]:</p>
+<p>26.             return 0  # 如果任意一项不符合，返回 0</p>
+<p>27.     return 1  # 全部符合返回 1</p>
+<p>28.  </p>
+<p>29. # 验证 dword_45A0 是否能通过 sub_123A 的条件</p>
+<p>30. result = sub_123A(dword_45A0, dword_4080, xor_value)</p>
+<p>31.  </p>
+<p>32. # 输出结果</p>
+<p>33. if result == 1:</p>
+<p>34.     print(“dword_45A0 可以让 sub_123A 返回 1”)</p>
+<p>35. else:</p>
+<p>36.     print(“dword_45A0 无法让 sub_123A 返回 1”)</p>
+<p>37.  </p>
+<p>38. def sub_13CA(a1, a2):</p>
+<p>39.     # 假设 a2 是一个指向整数数组的指针，实际传入的应为数组</p>
+<p>40.     for i in range(41):  # 从 0 到 40</p>
+<p>41.         if a1 == a2[i]:  # 检查 a1 是否等于数组中第 i 个元素</p>
+<p>42.             return 1  # 如果找到了，返回 1</p>
+<p>43.     return 0  # 如果没有找到，返回 0</p>
+<p>44.  </p>
+<p>45. data = [1, 2, 3, 5, 6, 7, 9, 17, 18, 20, 21, 22, 23, 24, 26, 27, 29, 33, 35, 36, 38, 42, 44, 45, 47, 51, 53, 54, 56, 57, 59, 60, 62, 63, 71, 73, 74, 75, 77, 78, 79]</p>
+<p>46.  </p>
+<p>47. print(len(data))</p>
+<p>48. i2 = 0</p>
+<p>49. i3list = []</p>
+<p>50.  </p>
+<p>51. dword_4440 = [0] * (9 * 9)  # Initialize a list with 9*8 = 72 elements, all set to 0</p>
+<p>52. remove_list = [</p>
+<p>53.     1, 5, 9,</p>
+<p>54.     11, 12, 13, 14, 15, 16, 17,</p>
+<p>55.     20, 26,</p>
+<p>56.     29, 31, 32, 33, 35,</p>
+<p>57.     38, 40, 41, 42, 44,</p>
+<p>58.     47, 49, 50, 51, 53,</p>
+<p>59.     56, 59, 62,</p>
+<p>60.     65, 66, 67, 68, 69, 70, 71,</p>
+<p>61.     73, 77, 81</p>
+<p>62. ]</p>
+<p>63.  </p>
+<p>64. for i in dword_45A0:</p>
+<p>65.     if not dword_4440[9 * (i &#x2F;&#x2F; 9) + i % 9]:</p>
+<p>66.         result = sub_13CA(i, data)  # 调用函数</p>
+<p>67.         if(result == 1):</p>
+<p>68.             # print(i)</p>
+<p>69.             i2+=1</p>
+<p>70.             i3list.append(i+1)</p>
+<p>71.         # print(result)  # 输出结果</p>
+<p>72. print(i2)</p>
+<p>73. print(i3list == dword_45A0)</p>
+<p>74. </p>
+<p>75. print(i3list)</p>
+<p>76.  </p>
+<h3 id="Output-3"><a href="#Output-3" class="headerlink" title="Output"></a>Output</h3><p>[78, 79, 7, 27, 75, 72, 22, 58, 54, 6, 60, 34, 3, 80, 10, 63, 76, 8, 23, 64, 74, 52, 48, 4, 45, 25, 30, 21, 43, 46, 28, 24, 57, 39, 2, 37, 36, 18, 55, 61, 19]</p>
+<h3 id="Extra-script-for-automation-input"><a href="#Extra-script-for-automation-input" class="headerlink" title="Extra script for automation input"></a>Extra script for automation input</h3><p> 1. from pwn import *</p>
+<p> 2.  </p>
+<p> 3. # Start the game process locally or connect remotely</p>
+<p> 4. #conn = process(“.&#x2F;bigtactoe”) # Adjust the path to the game binary</p>
+<p> 5. conn = remote(‘54.255.171.153’, 8000) # For remote connection</p>
+<p> 6.  </p>
+<p> 7. context.log_level = ‘debug’</p>
+<p> 8.  </p>
+<p> 9. moves = [78, 79, 7, 27, 75, 72, 22, 58, 54, 6, 60, 34, 3, 80, 10, 63, 76, 8, 23, 64, 74, 52, 48, 4, 45, 25, 30, 21, 43, 46, 28, 24, 57, 39, 2, 37, 36, 18, 55, 61, 19]</p>
+<p>10.  </p>
+<p>11. for move in moves:</p>
+<p>12. # Wait for the “Your move” prompt</p>
+<p>13. prompt = conn.recvuntil(b”Your move [1-81 :P ] :”)</p>
+<p>14. print(f”Received prompt: {prompt.decode()}”) # Log the prompt</p>
+<p>15. </p>
+<p>16. conn.sendline(str(move))</p>
+<p>17. response = conn.recvline(timeout=2)</p>
+<p>18. </p>
+<p>19. # Check if the game is expecting the next move or gives new feedback</p>
+<p>20. if b”Your move” in response:</p>
+<p>21. print(“Game is asking for the next move…”)</p>
+<p>22. else:</p>
+<p>23. print(f”Game response: {response.decode()}”)</p>
+<p>24. conn.close()</p>
+<p>25.  </p>
+<p>Output </p>
+<p><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/img-ctf-1729307653.4058523.png" alt="A screenshot of a computer Description automatically generated"></p>
+<p>flag{H4ckTh3Syst3mBr34kC0d3sAndD3f3nseF1rew4ll}</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">salad07</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/">http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="whatsapp,linkedin,wechat"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_2--WriteUp"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">IDK_CURTIN_CTF_2024_WAVE_2--WriteUp</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">salad07</div><div class="author-info__description">为了ta 拼尽全力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/saladbkp"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">SUP, a student who 24/7 fixing bugs, 努力从小白进化成小小白, 頑張れ~ 🔥</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CRYPTO"><span class="toc-number">1.</span> <span class="toc-text">CRYPTO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DANCE-OF-THE-STREAM-385-PTS"><span class="toc-number">1.1.</span> <span class="toc-text">DANCE OF THE STREAM 385 PTS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CHAL"><span class="toc-number">1.1.1.</span> <span class="toc-text">CHAL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA"><span class="toc-number">1.1.2.</span> <span class="toc-text">IDEA:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution"><span class="toc-number">1.1.3.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.1.4.</span> <span class="toc-text">Output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Feel-the-Heat-497-pts-PDE"><span class="toc-number">1.2.</span> <span class="toc-text">Feel the Heat 497 pts PDE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Chal"><span class="toc-number">1.2.1.</span> <span class="toc-text">Chal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">IDEA:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PDE-idk-what-was-this-before"><span class="toc-number">1.2.3.</span> <span class="toc-text">PDE !!! (idk what was this before</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Full-script"><span class="toc-number">1.2.4.</span> <span class="toc-text">Full script</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">Output</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RE"><span class="toc-number">2.</span> <span class="toc-text">RE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sl-eep-500-pts"><span class="toc-number">2.1.</span> <span class="toc-text">sl_eep 500 pts</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Chal-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">Chal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-2"><span class="toc-number">2.1.2.</span> <span class="toc-text">IDEA:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code"><span class="toc-number">2.1.3.</span> <span class="toc-text">Code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-2"><span class="toc-number">2.1.4.</span> <span class="toc-text">Output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bigtactoe-500-PTS"><span class="toc-number">2.2.</span> <span class="toc-text">Bigtactoe 500 PTS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Game-flow"><span class="toc-number">2.2.1.</span> <span class="toc-text">Game flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA-3"><span class="toc-number">2.2.2.</span> <span class="toc-text">IDEA:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Full-script-1"><span class="toc-number">2.2.3.</span> <span class="toc-text">Full script</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-3"><span class="toc-number">2.2.4.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extra-script-for-automation-input"><span class="toc-number">2.2.5.</span> <span class="toc-text">Extra script for automation input</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_3--WriteUp">IDK_CURTIN_CTF_2024_WAVE_3--WriteUp</a><time datetime="2024-10-19T03:14:13.000Z" title="Created 2024-10-19 11:14:13">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_2--WriteUp">IDK_CURTIN_CTF_2024_WAVE_2--WriteUp</a><time datetime="2024-10-19T03:13:38.000Z" title="Created 2024-10-19 11:13:38">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_1--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_1--WriteUp">IDK_CURTIN_CTF_2024_WAVE_1--WriteUp</a><time datetime="2024-10-19T03:13:24.000Z" title="Created 2024-10-19 11:13:24">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/01/IDK_ihack%20writeup/" title="IDK_ihack writeup">IDK_ihack writeup</a><time datetime="2024-08-01T04:17:15.000Z" title="Created 2024-08-01 12:17:15">2024-08-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/18/Basic%20of%20Computer%20Theory/" title="Basic of Computer Theory">Basic of Computer Theory</a><time datetime="2024-06-18T13:03:54.000Z" title="Created 2024-06-18 21:03:54">2024-06-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By salad07</div><div class="footer_custom_text"><div class="github-badge"> <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></div>  <div class="github-badge"><span class="badge-subject">Theme</span><span class="badge-value bg-blueviolet">Butterfly</span></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'http://example.com/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/'
+    this.page.identifier = '/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/'
+    this.page.title = 'IDK_CURTIN_CTF_2024_WAVE_3--WriteUp'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://saladbkp.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="/js/myjs.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
