@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A personal ICC 2026 reflection about Team Asia, substitution, pressure, and gratitude to Sherpa.">
+  <title>ICC 2026 Reflection in TEAM ASIA</title>
+  <style>
+    :root {
+      --bg: #f6f1ea;
+      --paper: #fffdf8;
+      --ink: #172033;
+      --soft: #4d5a6f;
+      --muted: #7b8493;
+      --line: #ded6ca;
+      --accent: #c95f37;
+      --blue: #245680;
+      --green: #287a69;
+      --code-bg: #f0ece4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      line-height: 1.75;
+    }
+
+    body::before {
+      content: "";
+      display: block;
+      height: 10px;
+      background: linear-gradient(90deg, var(--blue), var(--green), var(--accent));
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .page {
+      width: min(860px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 54px 0 80px;
+    }
+
+    header {
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(2.35rem, 7vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 24px 0 0;
+      color: var(--soft);
+      font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+      line-height: 1.55;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .meta span {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.72);
+    }
+
+    figure {
+      margin: 34px 0;
+    }
+
+    .cover img,
+    .photo img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 48px rgba(23, 32, 51, 0.13);
+    }
+
+    figcaption {
+      margin-top: 9px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 58px);
+      box-shadow: 0 28px 80px rgba(23, 32, 51, 0.11);
+    }
+
+    article > *:first-child {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 48px 0 16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.45rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 30px 0 10px;
+      color: var(--blue);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1.08rem;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      margin: 0 0 19px;
+      font-size: 1.08rem;
+    }
+
+    .lead {
+      color: #202a3f;
+      font-size: clamp(1.22rem, 2.5vw, 1.55rem);
+      line-height: 1.55;
+    }
+
+    .note {
+      margin: 28px 0;
+      padding: 22px 24px;
+      border-left: 4px solid var(--accent);
+      background: #fbf4ed;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .note p {
+      margin: 0;
+      color: #293348;
+      font-size: 1.05rem;
+    }
+
+    .tech {
+      margin: 24px 0;
+      padding: 20px 22px;
+      border: 1px solid #d7cfc2;
+      border-radius: 6px;
+      background: var(--code-bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .tech strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tech p {
+      margin: 0 0 12px;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .tech p:last-child {
+      margin-bottom: 0;
+    }
+
+    code {
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: rgba(23, 32, 51, 0.08);
+      color: #111827;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 34px 0;
+    }
+
+    .split figure {
+      margin: 0;
+    }
+
+    .triplet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 30px 0;
+    }
+
+    .triplet figure {
+      margin: 0;
+    }
+
+    .small-shot {
+      width: min(520px, 100%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sponsor-shot {
+      width: min(460px, 100%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .quote {
+      margin: 30px 0;
+      padding: 24px 26px;
+      border-left: 4px solid var(--blue);
+      background: #f3f6f8;
+      border-radius: 0 6px 6px 0;
+      color: #1c263b;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .thanks {
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .thanks ul {
+      margin: 14px 0 0;
+      padding-left: 1.2rem;
+    }
+
+    .thanks li {
+      margin-bottom: 8px;
+      font-size: 1.04rem;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 24px, 860px);
+        padding-top: 34px;
+      }
+
+      article {
+        padding: 22px 18px;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .triplet {
+        grid-template-columns: 1fr;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="kicker">ICC 2026 Reflection</p>
+      <h1>ICC 2026 in GOLD COAST Reflection</h1>
+      <p class="subtitle">
+        A personal blog about a malaysian in Team Asia in International Cybersecutiy Challenge 2026 in Australia, pressure, the bench, a last-minute call back into the game, and I am grateful to Sherpa for trusting me with this opportunity.
+      </p>
+      <div class="meta">
+        <span>18-20 May 2026</span>
+        <span>Team Asia</span>
+        <span>Attack-defense + jeopardy</span>
+        <span>Australia, Gold Coast</span>
+      </div>
+    </header>
+
+    <figure class="cover">
+      <img src="assets/icc-hero.jpg" alt="ICC 2026 competition venue with Team Asia">
+      <figcaption>Before game</figcaption>
+    </figure>
+
+    <article>
+      <p class="lead">
+        ICC 2026 was my second time joining the competition, but the feeling this year was completely different. At first, I wanted to write this experience day by day haha. In the end, I think it is better to go directly into the feeling that stayed with me the most.
+      </p>
+
+      <h2>Joining Team Asia</h2>
+      <p>
+        Last year, I joined as part of ASEAN. This year, when I received the notice, I found out that I would be joining Team Asia, the runner-up team from last year.
+      </p>
+      <p>
+        I was happy because I knew I would be surrounded by many very strong players. At the same time, one question kept appearing in my mind. If everyone around me is already so strong, what can I actually bring to the team?
+      </p>
+      <p>
+        As usual, the ICC format had 16 active players and 1 substitute. This year also had a human-resistance phase and an AI phase. During the human-resistance phase, we were limited to a smaller model setup, and later the team had a shared AI budget for attack-defense and jeopardy. That made every decision feel more important, because time, attention, and resources were all limited.
+      </p>
+
+      <h2>Trying to be useful before the game</h2>
+      <p>
+        Before the competition started, I understood that I could be substituted at any time. I also knew that I had been long time no manually solving challenges without AI as much as before. Because of that, I tried to contribute as early as possible through preparation.
+      </p>
+      <p>
+        I helped with the attack-defense setup, including things like <code>s4dfarm</code>, <code>tulip</code>, a Discord bot, and scripts for dumping challenge files into GitHub. I tried to make these ready before demo day with our captain "flame", and I was very glad that my Discord bot and dumper were eventually adopted by the team.
+      </p>
+      <div class="split">
+        <figure class="photo small-shot">
+          <img src="assets/setup-screenshot.jpg" alt="Setup notes screenshot">
+          <figcaption>Happy to be here</figcaption>
+        </figure>
+        <figure class="photo small-shot">
+          <img src="assets/bot-screenshot.jpg" alt="Discord bot and dumper screenshot">
+          <figcaption>The bot and dumper were small contributions, but seeing them adopted meant a lot to me.</figcaption>
+        </figure>
+      </div>
+      <p>
+        Even if I could not guarantee a solve later, I wanted to make sure I had already helped the team in some way.
+      </p>
+
+      <div class="split">
+        <figure class="photo">
+          <img src="assets/player.jpg" alt="Competition venue moment">
+          <figcaption>After a long waiting and delay ....</figcaption>
+        </figure>
+      </div>
+
+      <h2>Day one: happy, anxious, and under pressure</h2>
+      <p>
+        First day, I was assigned as a web exploit player. Honestly, I was both happy and anxious.
+      </p>
+      <p>
+        In the first hour, I focused hard on one challenge. Rayhan and I looked at a reversed binary and suspected there might be SQL injection. I quickly focused on the login and flight pages, trying different SQL payloads and checking whether that direction made sense.
+      </p>
+      <p>
+        Then Europe got first blood, and it immediately broke our assumption. The issue was not the SQL injection path we were chasing. The login page had an overflow that could overwrite data. After a short discussion with Moyashi, we moved quickly into copying the working payload idea and patching the service.
+      </p>
+
+<!--       <div class="tech">
+        <strong>Uncensored technical note</strong>
+        <p>
+          My first direction was wrong: I was testing SQL injection around the login and flight logic, but the actual first-blood path was an overflow in the login page that allowed an overwrite.
+        </p>
+        <p>
+          The painful part was that I knew the area was important, but my eyes did not catch the real bug fast enough. That was the first big pressure spike for me.
+        </p>
+      </div> -->
+
+      <figure class="photo small-shot">
+        <img src="assets/day-one-pressure.jpg" alt="Day one pressure moment">
+        <figcaption>Game moment</figcaption>
+      </figure>
+
+      <p>
+        After patching, we still saw that the challenge could be attacked. That meant there was another attack surface. With <code>tulip</code>, we quickly narrowed the direction toward the QR flow. It looked like the QR signature might be forgeable to access a page containing the flag. I was preparing to script the QR flow, but at that moment Satoon solved it.
+      </p>
+      <p>
+        Again, I felt pressure. I understood the rough direction, but someone else turned it into a solve much faster. On top of that, the QR tooling I wanted to use did not run properly on my Mac, which made me feel even more behind.
+      </p>
+
+<!--       <div class="tech">
+        <strong>What the web challenge felt like</strong>
+        <p>
+          The rough flow was: initial wrong SQLi hypothesis, then login overflow overwrite, then a second path around QR signature forging to reach a flag page.
+        </p>
+        <p>
+          Later in the AI phase, Moyashi found another logic issue around a double-negative check in a club query. That led to a bypass of club identification and access to another flag page. I understood there was a vulnerability, but I could not fully connect the exploit flow fast enough before Moyashi scripted it.
+        </p>
+      </div> -->
+
+      <p>
+        At that point, I had two choices. I could switch to another challenge, as the captain asked Rayhan and me to check another zero-solve challenge, or I could keep focusing on the same service and try to work on the next flag.
+      </p>
+      <p>
+        I thought changing challenges might give me new ideas. But one challenge involved a binary running in a web context, and honestly, I did not know where to go with it. Another was Rust crypto, which was even further away from what I could help with at that moment. So I moved back to the original web challenge and kept staring at <code>tulip</code>.
+      </p>
+      <p>
+        By the end of the day, Team Asia was ranked fifth. I know fifth place is not terrible, but for a team this strong, it felt bad. Personally, I felt like I had not helped enough. I could only hope that on the second day, in jeopardy, I might contribute in AI, cloud, hardware, or miscellaneous challenges.
+      </p>
+      <div class="split">
+        <figure class="photo">
+          <img src="assets/dinner-one.jpg" alt="Dinner after day one">
+          <figcaption>A browser without gpt, gemini, claude ... haha</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="assets/dinner-two.jpg" alt="Dinner table after day one">
+          <figcaption>tomyam food in aus?</figcaption>
+        </figure>
+      </div>
+
+      <h2>The night before being benched</h2>
+      <p>
+        That night, after we returned to the hotel, our captain went room by room to check in with everyone. When he came to the room Rayhan and I shared, he said something like:
+      </p>
+      <div class="quote">
+        "I know being substituted does not feel good. But there is no choice. If someone is on stage, someone else has to be on the bench."
+      </div>
+      <p>
+        At that moment, I felt like it was over for me. Unlike last year, the substitute was decided far in advance 1 or 2 days. This year, it could simply happen through a Discord notification in the morning, and suddenly you were no longer in the active group. So we need to be ready for anytime.
+      </p>
+
+      <h2>Day two: the bench</h2>
+      <p>
+        The next morning, .....
+      </p>
+      <figure class="photo small-shot">
+        <img src="assets/substitute-notice.jpg" alt="Substitute notification screenshot">
+        <figcaption>The notification wake me up.</figcaption>
+      </figure>
+      <p>
+        I tried to think positively. The active players were better for that moment. This was how Team Asia could pull the score back.
+      </p>
+      <p>
+        When I arrived at the venue, I quietly walked to the substitute seat. I watched my teammates set up, but there was nothing I could do. I could only cheer for them in my heart.
+      </p>
+      <p>
+        I kept watching the scoreboard, checking what challenges were still unsolved, and talking with people around me. Fortunately, Team Asia stayed around the top three. One funny thing is that this was the first time in a CTF where I could slowly enjoy lunch, bite by bite, instead of eating in a rush while debugging something.
+      </p>
+      <figure class="photo">
+          <img src="assets/bench.jpg" alt="Substitute area moment">
+          <figcaption>view from a completely different seat.</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="assets/lunch-bench.jpg" alt="Lunch while on the bench">
+        <figcaption>the score is so close</figcaption>
+      </figure>
+
+      <h2>Suddenly called back in</h2>
+      <p>
+        After lunch, I still did not know whether I would be substituted back in. I watched the scoreboard until I fell asleep.
+      </p>
+      <p>
+        Around 3:20 PM, the moment I opened my eyes, I heard someone ask, "Are you the substitute?" Suddenly, I was called back into the active area. Team Asia needed help in miscellaneous, and other categories had also been stuck for a while.
+      </p>
+      <p>
+        I rushed back to the table, opened Discord, and saw dense channel messages everywhere. First, I had to understand the current challenge progress. I only had around two and a half hours. I could not solve like usual from the beginning. I had to quickly choose where I could be useful.
+      </p>
+      <p>
+        I was thinking... If I could not solve anything, then I would have wasted the substitute opportunity.
+      </p>
+
+      <figure class="photo">
+        <img src="assets/after-game.jpg" alt="Competition floor after the game">
+        <figcaption>Coming back.</figcaption>
+      </figure>
+
+      <h3>The A2A / MCP challenge</h3>
+      <p>
+        At first, I panicked because I did not see a familiar cloud challenge. Then I noticed an A2A-style challenge. I had seen this kind of thing briefly before, so I started immediately.
+      </p>
+      <p>
+        The Discord channel had only a few messages. It was an A2A / MCP challenge with login credentials and a web console. At the beginning, I had no idea what it wanted. Then, from a small amount of command fuzzing, I found an <code>agent.md</code> file. That gave me the direction.
+      </p>
+      <p>
+        The idea was to obtain a nonce and then resend the request through JSON-RPC. I followed the format from a GitHub script and tried several variations. After many type errors and failed attempts, I finally got the flag around 4:40 PM.
+      </p>
+
+<!--       <div class="tech">
+        <strong>Uncensored technical note</strong>
+        <p>
+          The solve path I used was: web console access, command fuzzing, discovery of <code>agent.md</code>, understanding that a nonce was needed, then replaying the flow with JSON-RPC formatting.
+        </p>
+        <p>
+          Was the challenge impossible? No. Was I under pressure? Very much, yes.
+        </p>
+      </div> -->
+
+      <figure class="photo small-shot">
+        <img src="assets/solve-screenshot.jpg" alt="A2A MCP solve screenshot">
+        <figcaption>The small solve that made being called back feel meaningful.</figcaption>
+      </figure>
+
+      <p>
+        After taking one breath, I immediately moved to the next challenge. I had only about 1 hour and 10 minutes left.
+      </p>
+      <p>
+        I had three choices: reverse engineering, which I am familiar with but was not my team's main direction; hardware, which I also like but might take too long to follow up; or OSINT, which I am not strong at but already had three solves from other teams.
+      </p>
+      <p>
+        I originally wanted to do reverse engineering for a final push. But I noticed our team was consuming AI tokens quickly. If I continued using them, I might waste tokens and time that teammates had already spent. I also looked at hardware, but our captain had already spent a lot of effort there, and I did not want to interrupt or waste his time.
+      </p>
+      <p>
+        So I chose OSINT because it did not need AI. I am still not sure whether that was the correct decision. In the end, I did not find the username before the competition ended.
+      </p>
+
+      <figure class="photo small-shot">
+        <img src="assets/osint-screenshot.jpg" alt="OSINT attempt screenshot">
+        <figcaption>osint skill somehow is important...</figcaption>
+      </figure>
+
+      <h2>After the game</h2>
+      <p>
+        That was the whole emotional journey of the two competition days. There were jokes, pressure, choices, fast decisions, disappointment, one small comeback, and a lot of learning. It was a very unforgettable competition.
+      </p>
+
+      <figure class="photo">
+        <img src="assets/sunrise.jpg" alt="Team Asia sunrise photo">
+        <figcaption>After the competition, some of us agreed to wake up at 6:10 AM to watch the sunrise.</figcaption>
+      </figure>
+
+      <p>
+        After that, we went to AusCERT, visited the conference, went to see wildlife, and had dinner together near the beach. These moments made the trip feel like more than only a competition.
+      </p>
+
+      <div class="triplet">
+        <figure class="photo">
+          <img src="assets/conference.jpg" alt="AusCERT conference floor">
+          <figcaption>AusCERT after the competition.</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="assets/wildlife.jpg" alt="Wildlife visit with teammates">
+          <figcaption>Wildlife visit with teammates after AusCERT.</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="assets/dinner.jpg" alt="Dinner with friends">
+          <figcaption>Dinner near the beach with teammates.</figcaption>
+        </figure>
+      </div>
+
+      <h2>Thank you</h2>
+      <p>
+        I am very happy that I got to meet so many talented people from around the world. Shoutout to the fun and very strong web players Moyashi and Satoon; Claustra, Hikkun, and Zatsu; crypto genius Yu; binary runner iwanconf; the lovely Taiwan sunrise group Allen and Yunshieun; the Korean group wlswotmd, KS, and Oni; hardworking Rayhan from Indonesia; and the Mongolia group Flame and Gambo.
+      </p>
+      <p>
+        Most importantly, thank you to Sherpa for the trust and support. This opportunity meant a lot to me and more aware of what I need to improve.
+      </p>
+
+      <figure class="photo sponsor-shot">
+        <img src="assets/sherpa.jpg" alt="Sherpa sponsor photo">
+        <figcaption>i am not drunk !!!</figcaption>
+      </figure>
+
+      <figure class="photo">
+        <img src="assets/team-dinner.jpg" alt="Team dinner group photo">
+        <figcaption>Very happy and very lucky to be in this team.</figcaption>
+      </figure>
+
+      <figure class="photo">
+        <img src="assets/IMG_3882.jpg" alt="Team photo">
+        <figcaption>Thank you, and I hope we will meet again one day.</figcaption>
+      </figure>
+
+    </article>
+
+    <footer>
+      Personal blog. No Technical details are leak.
+    </footer>
+  </main>
+</body>
+</html>
